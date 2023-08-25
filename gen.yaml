@@ -1,0 +1,14 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  sdkClassName: bolt-embed
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+php:
+  version: 0.0.1
+  maxMethodParams: 0
+  namespace: bolt_dev\bolt
+  packageName: bolt-dev/bolt-embed
