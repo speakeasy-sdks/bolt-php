@@ -31,6 +31,7 @@ x-speakeasy-retries:
     exponent: 1.5
   statusCodes:
     - 5XX
+    - 4XX
   retryConnectionErrors: true
 
 tags:
