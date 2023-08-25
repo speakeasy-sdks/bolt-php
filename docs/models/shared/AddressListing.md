@@ -1,0 +1,22 @@
+# AddressListing
+
+The address was successfully added
+
+
+## Fields
+
+| Field                    | Type                     | Required                 | Description              | Example                  |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `company`                | *?string*                | :heavy_minus_sign:       | N/A                      | ACME Corporation         |
+| `countryCode`            | *string*                 | :heavy_check_mark:       | N/A                      | US                       |
+| `email`                  | *?string*                | :heavy_minus_sign:       | N/A                      | alice@example.com        |
+| `firstName`              | *string*                 | :heavy_check_mark:       | N/A                      | Alice                    |
+| `id`                     | *?string*                | :heavy_minus_sign:       | N/A                      | D4g3h5tBuVYK9            |
+| `isDefault`              | *?bool*                  | :heavy_minus_sign:       | N/A                      | true                     |
+| `lastName`               | *string*                 | :heavy_check_mark:       | N/A                      | Baker                    |
+| `locality`               | *string*                 | :heavy_check_mark:       | N/A                      | San Francisco            |
+| `phone`                  | *?string*                | :heavy_minus_sign:       | N/A                      | +14155550199             |
+| `postalCode`             | *string*                 | :heavy_check_mark:       | N/A                      | 94105                    |
+| `region`                 | *?string*                | :heavy_minus_sign:       | N/A                      | CA                       |
+| `streetAddress1`         | *string*                 | :heavy_check_mark:       | N/A                      | 535 Mission St, Ste 1401 |
+| `streetAddress2`         | *?string*                | :heavy_minus_sign:       | N/A                      | c/o Shipping Department  |

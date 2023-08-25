@@ -1,0 +1,10 @@
+# Amounts
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   | Example                                                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `currency`                                                                    | *string*                                                                      | :heavy_check_mark:                                                            | N/A                                                                           | USD                                                                           |
+| `tax`                                                                         | *?int*                                                                        | :heavy_minus_sign:                                                            | The total tax amount, in cents for all of the items associated with the cart. | 900                                                                           |
+| `total`                                                                       | *int*                                                                         | :heavy_check_mark:                                                            | The total amount, in cents, including its items and taxes (if applicable).    | 900                                                                           |
