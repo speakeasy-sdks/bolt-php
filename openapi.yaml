@@ -31,7 +31,6 @@ x-speakeasy-retries:
     exponent: 1.5
   statusCodes:
     - 5XX
-    - 4XX
   retryConnectionErrors: true
 
 tags:
@@ -71,6 +70,8 @@ paths:
             - bolt.account.manage
             - bolt.account.view
           api-key: []
+        - oauth-bearer: []
+          api-key: []
       parameters:
         - $ref: '#/components/parameters/x-publishable-key'
       responses:
@@ -91,6 +92,8 @@ paths:
       security:
         - oauth:
             - bolt.account.manage
+          api-key: []
+        - oauth-bearer: []
           api-key: []
       parameters:
         - $ref: '#/components/parameters/x-publishable-key'
@@ -129,6 +132,8 @@ paths:
       security:
         - oauth:
             - bolt.account.manage
+          api-key: []
+        - oauth-bearer: []
           api-key: []
       parameters:
         - $ref: '#/components/parameters/x-publishable-key'
@@ -172,6 +177,8 @@ paths:
       security:
         - oauth:
             - bolt.account.manage
+          api-key: []
+        - oauth-bearer: []
           api-key: []
       parameters:
         - $ref: '#/components/parameters/x-publishable-key'
@@ -222,6 +229,8 @@ paths:
         - oauth:
             - bolt.account.manage
           api-key: []
+        - oauth-bearer: []
+          api-key: []
       parameters:
         - $ref: '#/components/parameters/x-publishable-key'
       requestBody:
@@ -255,6 +264,8 @@ paths:
       security:
         - oauth:
             - bolt.account.manage
+          api-key: []
+        - oauth-bearer: []
           api-key: []
       parameters:
         - $ref: '#/components/parameters/x-publishable-key'
@@ -604,12 +615,15 @@ components:
       type: apiKey
       in: header
       name: X-API-Key
+    oauth-bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
     oauth:
       flows:
-        authorizationCode:
-          authorizationUrl: /v1/oauth/authorize
-          refreshUrl: /v1/oauth/token
+        clientCredentials:
           tokenUrl: /v1/oauth/token
+          refreshUrl: /v1/oauth/token
           scopes:
             bolt.account.manage: This scope grants permissions to perform read/edit/delete actions on Bolt Account data
             bolt.account.view: This scope grants permissions to perform read only actions on Bolt Account data
