@@ -116,6 +116,8 @@ use \bolt_dev\bolt\Models\Shared\CartDiscount;
 use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurity;
+use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -150,8 +152,9 @@ try {
     $request->paymentMethodInitializeRequest->paymentMethod->id = 'id';
 
     $requestSecurity = new PaymentsInitializeSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new PaymentsInitializeSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->payments->initializeLoggedInPayment($request, $requestSecurity);
 

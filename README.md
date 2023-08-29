@@ -49,6 +49,8 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
+use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -72,8 +74,9 @@ try {
     $request->addressListing->streetAddress2 = 'c/o Shipping Department';
 
     $requestSecurity = new AccountAddressCreateSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new AccountAddressCreateSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->account->addAddress($request, $requestSecurity);
 

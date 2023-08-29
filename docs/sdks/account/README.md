@@ -31,6 +31,8 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
+use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -54,8 +56,9 @@ try {
     $request->addressListing->streetAddress2 = 'c/o Shipping Department';
 
     $requestSecurity = new AccountAddressCreateSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new AccountAddressCreateSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->account->addAddress($request, $requestSecurity);
 
@@ -99,6 +102,8 @@ require_once 'vendor/autoload.php';
 use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodRequest;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurity;
+use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -132,8 +137,9 @@ try {
     $request->xPublishableKey = 'quibusdam';
 
     $requestSecurity = new AccountAddPaymentMethodSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new AccountAddPaymentMethodSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->account->addPaymentMethod($request, $requestSecurity);
 
@@ -175,6 +181,8 @@ require_once 'vendor/autoload.php';
 use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteRequest;
 use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurity;
+use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -185,8 +193,9 @@ try {
     $request->id = 'D4g3h5tBuVYK9';
 
     $requestSecurity = new AccountAddressDeleteSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new AccountAddressDeleteSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->account->deleteAddress($request, $requestSecurity);
 
@@ -230,6 +239,8 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Operations\AccountAddressEditRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressEditSecurity;
+use \bolt_dev\bolt\Models\Operations\AccountAddressEditSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\AccountAddressEditSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -254,8 +265,9 @@ try {
     $request->id = 'D4g3h5tBuVYK9';
 
     $requestSecurity = new AccountAddressEditSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new AccountAddressEditSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->account->editAddress($request, $requestSecurity);
 
@@ -344,6 +356,8 @@ require_once 'vendor/autoload.php';
 use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Operations\AccountGetRequest;
 use \bolt_dev\bolt\Models\Operations\AccountGetSecurity;
+use \bolt_dev\bolt\Models\Operations\AccountGetSecurityOption1;
+use \bolt_dev\bolt\Models\Operations\AccountGetSecurityOption2;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -353,8 +367,9 @@ try {
     $request->xPublishableKey = 'illum';
 
     $requestSecurity = new AccountGetSecurity();
-    $requestSecurity->apiKey = '';
-    $requestSecurity->oauth = '';
+    $requestSecurity->option1 = new AccountGetSecurityOption1();
+    $requestSecurity->option1->apiKey = '';
+    $requestSecurity->option1->oauth = '';
 
     $response = $sdk->account->get($request, $requestSecurity);
 

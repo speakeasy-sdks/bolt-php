@@ -11,15 +11,15 @@ namespace bolt_dev\bolt\Models\Operations;
 use \bolt_dev\bolt\Utils\SpeakeasyMetadata;
 class AccountAddressEditSecurity
 {
-	#[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=X-API-Key')]
-    public string $apiKey;
+	#[SpeakeasyMetadata('security:option=true')]
+    public ?AccountAddressEditSecurityOption1 $option1 = null;
     
-	#[SpeakeasyMetadata('security:scheme=true,type=oauth2,name=Authorization')]
-    public string $oauth;
+	#[SpeakeasyMetadata('security:option=true')]
+    public ?AccountAddressEditSecurityOption2 $option2 = null;
     
 	public function __construct()
 	{
-		$this->apiKey = "";
-		$this->oauth = "";
+		$this->option1 = null;
+		$this->option2 = null;
 	}
 }

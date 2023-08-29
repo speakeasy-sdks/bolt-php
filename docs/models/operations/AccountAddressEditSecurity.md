@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `apiKey`           | *string*           | :heavy_check_mark: | N/A                |                    |
-| `oauth`            | *string*           | :heavy_check_mark: | N/A                |                    |
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `option1`                                                                                          | [?AccountAddressEditSecurityOption1](../../models/operations/AccountAddressEditSecurityOption1.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
+| `option2`                                                                                          | [?AccountAddressEditSecurityOption2](../../models/operations/AccountAddressEditSecurityOption2.md) | :heavy_minus_sign:                                                                                 | N/A                                                                                                |
