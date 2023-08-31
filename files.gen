@@ -272,3 +272,4 @@ docs/models/shared/EventListEventList.md
 docs/models/shared/EventList.md
 docs/models/callbacks/WebhooksCreateWebhookEventResponse.md
 docs/models/callbacks/WebhooksCreateWebhookEventRequestBody.md
+.gitattributes

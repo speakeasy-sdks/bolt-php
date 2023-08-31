@@ -26,8 +26,8 @@ class SDKConfiguration
 	];
 	public string $language = 'php';
 	public string $openapiDocVersion = '3.0.1';
-	public string $sdkVersion = '0.1.1';
-	public string $genVersion = '2.88.5';
+	public string $sdkVersion = '0.2.0';
+	public string $genVersion = '2.89.1';
 
 	public function getServerUrl(): string
 	{
