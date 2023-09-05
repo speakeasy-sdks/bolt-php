@@ -77,7 +77,7 @@ class Webhooks
      * @return \bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse
      */
 	public function delete(
-        \bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest $request,
         \bolt_dev\bolt\Models\Operations\WebhooksDeleteSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse
     {
@@ -120,7 +120,7 @@ class Webhooks
      * @return \bolt_dev\bolt\Models\Operations\WebhooksGetResponse
      */
 	public function get(
-        \bolt_dev\bolt\Models\Operations\WebhooksGetRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\WebhooksGetRequest $request,
         \bolt_dev\bolt\Models\Operations\WebhooksGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksGetResponse
     {
@@ -167,7 +167,7 @@ class Webhooks
      * @return \bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse
      */
 	public function getAll(
-        \bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest $request,
         \bolt_dev\bolt\Models\Operations\WebhooksGetAllSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse
     {

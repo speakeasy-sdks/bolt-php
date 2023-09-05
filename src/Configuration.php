@@ -32,7 +32,7 @@ class Configuration
      * @return \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse
      */
 	public function getmerchantCallback(
-        \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest $request,
         \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse
     {

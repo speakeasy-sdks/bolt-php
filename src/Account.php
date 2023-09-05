@@ -143,7 +143,7 @@ class Account
      * @return \bolt_dev\bolt\Models\Operations\AccountAddressDeleteResponse
      */
 	public function deleteAddress(
-        \bolt_dev\bolt\Models\Operations\AccountAddressDeleteRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\AccountAddressDeleteRequest $request,
         \bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\AccountAddressDeleteResponse
     {
@@ -248,7 +248,7 @@ class Account
      * @return \bolt_dev\bolt\Models\Operations\AccountExistsResponse
      */
 	public function exists(
-        \bolt_dev\bolt\Models\Operations\AccountExistsRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\AccountExistsRequest $request,
     ): \bolt_dev\bolt\Models\Operations\AccountExistsResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -294,7 +294,7 @@ class Account
      * @return \bolt_dev\bolt\Models\Operations\AccountGetResponse
      */
 	public function get(
-        \bolt_dev\bolt\Models\Operations\AccountGetRequest $request,
+        ?\bolt_dev\bolt\Models\Operations\AccountGetRequest $request,
         \bolt_dev\bolt\Models\Operations\AccountGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\AccountGetResponse
     {
