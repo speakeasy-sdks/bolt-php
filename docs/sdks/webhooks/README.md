@@ -1,4 +1,4 @@
-# webhooks
+# Webhooks
 
 ## Overview
 
@@ -185,7 +185,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new WebhooksGetAllRequest();
-    $request->xPublishableKey = 'minus';
+    $request->xPublishableKey = 'magnam';
 
     $requestSecurity = new WebhooksGetAllSecurity();
     $requestSecurity->apiKey = '';

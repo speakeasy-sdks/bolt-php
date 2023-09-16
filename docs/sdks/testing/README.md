@@ -1,4 +1,4 @@
-# testing
+# Testing
 
 ## Overview
 
@@ -98,7 +98,6 @@ try {
     $request->deliveryDate = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2014-08-23:T06:00:00Z');
     $request->status = ShipmentTrackingUpdateStatus::InTransit;
     $request->trackingDetails = [
-        new ShipmentTrackingUpdateTrackingDetails(),
         new ShipmentTrackingUpdateTrackingDetails(),
     ];
     $request->trackingNumber = 'MockBolt-143292';

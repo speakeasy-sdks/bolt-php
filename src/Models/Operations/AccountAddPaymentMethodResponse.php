@@ -23,16 +23,16 @@ class AccountAddPaymentMethodResponse
     /**
      * The payment method was successfully added
      * 
-     * @var mixed $paymentMethod
+     * @var ?\bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard $paymentMethodCreditCard
      */
 	
-    public mixed $paymentMethod = null;
+    public ?\bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard $paymentMethodCreditCard = null;
     
 	public function __construct()
 	{
 		$this->contentType = "";
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->paymentMethod = null;
+		$this->paymentMethodCreditCard = null;
 	}
 }

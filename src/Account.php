@@ -99,7 +99,7 @@ class Account
         $url = Utils\Utils::generateUrl($baseUrl, '/account/payment-methods');
         
         $options = ['http_errors' => false];
-        $body = Utils\Utils::serializeRequestBody($request, "requestBody", "json");
+        $body = Utils\Utils::serializeRequestBody($request, "paymentMethodCreditCard", "json");
         if ($body === null) {
             throw new \Exception('Request body is required');
         }
@@ -124,7 +124,7 @@ class Account
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->paymentMethod = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
+                $response->paymentMethodCreditCard = $serializer->deserialize((string)$httpResponse->getBody(), 'bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard', 'json');
             }
         }
 

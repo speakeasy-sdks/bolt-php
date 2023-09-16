@@ -16,12 +16,12 @@ class PaymentMethodInitializeRequest
     public Cart $cart;
     
 	#[\JMS\Serializer\Annotation\SerializedName('payment_method')]
-    #[\JMS\Serializer\Annotation\Type('mixed')]
-    public mixed $paymentMethod;
+    #[\JMS\Serializer\Annotation\Type('bolt_dev\bolt\Models\Shared\PaymentMethodSavedPaymentMethod')]
+    public PaymentMethodSavedPaymentMethod $paymentMethod;
     
 	public function __construct()
 	{
 		$this->cart = new \bolt_dev\bolt\Models\Shared\Cart();
-		$this->paymentMethod = null;
+		$this->paymentMethod = new \bolt_dev\bolt\Models\Shared\PaymentMethodSavedPaymentMethod();
 	}
 }

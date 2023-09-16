@@ -9,15 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 use \bolt_dev\bolt\Utils\SpeakeasyMetadata;
-/**
- * Identifier - A type and value combination that defines the identifier used to detect
- * 
- * the existence of an account.
- * 
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class Identifier
 {
     /**

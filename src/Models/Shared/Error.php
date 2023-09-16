@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * Error - The specified resource was not found
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class Error
 {
     /**

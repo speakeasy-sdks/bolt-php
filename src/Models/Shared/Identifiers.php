@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * Identifiers - Identifiers were successfully retrieved
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class Identifiers
 {
     /**

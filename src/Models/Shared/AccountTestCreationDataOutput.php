@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * AccountTestCreationDataOutput - The account was successfully created
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class AccountTestCreationDataOutput
 {
 	#[\JMS\Serializer\Annotation\SerializedName('deactivate_at')]

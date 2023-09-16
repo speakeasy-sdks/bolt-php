@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * Webhook - The webhook was successfully created
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class Webhook
 {
     /**

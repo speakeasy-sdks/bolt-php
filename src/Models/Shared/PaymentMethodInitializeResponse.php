@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * PaymentMethodInitializeResponse - Payment token retrieved
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class PaymentMethodInitializeResponse
 {
 	#[\JMS\Serializer\Annotation\SerializedName('action')]

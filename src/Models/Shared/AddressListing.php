@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * AddressListing - The address was successfully added
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class AddressListing
 {
 	#[\JMS\Serializer\Annotation\SerializedName('company')]

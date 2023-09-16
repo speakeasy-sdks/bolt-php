@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * CreditCard - Successfully generated test credit card details
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class CreditCard
 {
     /**

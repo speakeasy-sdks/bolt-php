@@ -1,4 +1,4 @@
-# payments
+# Payments
 
 ## Overview
 
@@ -33,6 +33,8 @@ use \bolt_dev\bolt\Models\Shared\Amounts;
 use \bolt_dev\bolt\Models\Shared\CartDiscount;
 use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
+use \bolt_dev\bolt\Models\Shared\PaymentMethodPaypal;
+use \bolt_dev\bolt\Models\Shared\PaymentMethodPaypalTag;
 use \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeSecurity;
 
 $sdk = BoltEmbed::builder()
@@ -49,17 +51,14 @@ try {
     $request->guestPaymentMethodInitializeRequest->cart->amounts->total = 900;
     $request->guestPaymentMethodInitializeRequest->cart->discounts = [
         new CartDiscount(),
-        new CartDiscount(),
     ];
     $request->guestPaymentMethodInitializeRequest->cart->displayId = '215614191';
     $request->guestPaymentMethodInitializeRequest->cart->items = [
-        new CartItem(),
         new CartItem(),
     ];
     $request->guestPaymentMethodInitializeRequest->cart->orderDescription = 'Order #1234567890';
     $request->guestPaymentMethodInitializeRequest->cart->orderReference = 'order_100';
     $request->guestPaymentMethodInitializeRequest->cart->shipments = [
-        new CartShipment(),
         new CartShipment(),
     ];
     $request->guestPaymentMethodInitializeRequest->paymentMethod = new PaymentMethodPaypal();
@@ -115,6 +114,8 @@ use \bolt_dev\bolt\Models\Shared\Amounts;
 use \bolt_dev\bolt\Models\Shared\CartDiscount;
 use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
+use \bolt_dev\bolt\Models\Shared\PaymentMethodSavedPaymentMethod;
+use \bolt_dev\bolt\Models\Shared\PaymentMethodSavedPaymentMethodTag;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurity;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption1;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption2;
@@ -124,7 +125,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new PaymentsInitializeRequest();
-    $request->xPublishableKey = 'debitis';
+    $request->xPublishableKey = 'suscipit';
     $request->paymentMethodInitializeRequest = new PaymentMethodInitializeRequest();
     $request->paymentMethodInitializeRequest->cart = new Cart();
     $request->paymentMethodInitializeRequest->cart->amounts = new Amounts();
@@ -137,14 +138,10 @@ try {
     $request->paymentMethodInitializeRequest->cart->displayId = '215614191';
     $request->paymentMethodInitializeRequest->cart->items = [
         new CartItem(),
-        new CartItem(),
-        new CartItem(),
-        new CartItem(),
     ];
     $request->paymentMethodInitializeRequest->cart->orderDescription = 'Order #1234567890';
     $request->paymentMethodInitializeRequest->cart->orderReference = 'order_100';
     $request->paymentMethodInitializeRequest->cart->shipments = [
-        new CartShipment(),
         new CartShipment(),
     ];
     $request->paymentMethodInitializeRequest->paymentMethod = new PaymentMethodSavedPaymentMethod();

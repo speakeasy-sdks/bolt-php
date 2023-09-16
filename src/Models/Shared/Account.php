@@ -9,12 +9,6 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/**
- * Account - The account details were successfully retrieved
- * 
- * @package bolt_dev\bolt\Models\Shared
- * @access public
- */
 class Account
 {
     /**
@@ -29,10 +23,10 @@ class Account
     /**
      * $paymentMethods
      * 
-     * @var array<mixed> $paymentMethods
+     * @var array<\bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard> $paymentMethods
      */
 	#[\JMS\Serializer\Annotation\SerializedName('payment_methods')]
-    #[\JMS\Serializer\Annotation\Type('array<mixed>')]
+    #[\JMS\Serializer\Annotation\Type('array<bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard>')]
     public array $paymentMethods;
     
 	#[\JMS\Serializer\Annotation\SerializedName('profile')]
