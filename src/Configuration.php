@@ -28,12 +28,10 @@ class Configuration
      * 
      * 
      * @param \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest $request
-     * @param \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse
      */
 	public function getmerchantCallback(
         ?\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest $request,
-        \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -47,8 +45,7 @@ class Configuration
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -72,11 +69,9 @@ class Configuration
      * 
      * Return several identifiers for the merchant, such as public IDs, publishable keys, signing secrets, etc...
      * 
-     * @param \bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetResponse
      */
 	public function getmerchantIdenitfier(
-        \bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -86,8 +81,7 @@ class Configuration
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -113,12 +107,10 @@ class Configuration
      * 
      * 
      * @param \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest $request
-     * @param \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateResponse
      */
 	public function updatemerchantCallback(
         \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest $request,
-        \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -137,8 +129,7 @@ class Configuration
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('PATCH', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('PATCH', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 

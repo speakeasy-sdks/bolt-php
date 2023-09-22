@@ -6,10 +6,10 @@
 
 declare(strict_types=1);
 
-namespace bolt_dev\bolt\Models\Operations;
+namespace bolt_dev\bolt\Models\Shared;
 
 use \bolt_dev\bolt\Utils\SpeakeasyMetadata;
-class MerchantIdentifiersGetSecurity
+class Security
 {
 	#[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=X-API-Key')]
     public string $apiKey;

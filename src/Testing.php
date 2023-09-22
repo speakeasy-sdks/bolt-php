@@ -28,12 +28,10 @@ class Testing
      * 
      * 
      * @param \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput $request
-     * @param \bolt_dev\bolt\Models\Operations\TestingAccountCreateSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse
      */
 	public function createAccount(
         \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput $request,
-        \bolt_dev\bolt\Models\Operations\TestingAccountCreateSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -48,8 +46,7 @@ class Testing
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('POST', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -77,12 +74,10 @@ class Testing
      * 
      * 
      * @param \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate $request
-     * @param \bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateResponse
      */
 	public function createShipmentTracking(
         \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate $request,
-        \bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -97,8 +92,7 @@ class Testing
         $options['headers']['Accept'] = '*/*';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('POST', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -120,11 +114,9 @@ class Testing
      * generated against the `4111 1111 1111 1004` test card.
      * 
      * 
-     * @param \bolt_dev\bolt\Models\Operations\TestingCreditCardGetSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\TestingCreditCardGetResponse
      */
 	public function getCreditCard(
-        \bolt_dev\bolt\Models\Operations\TestingCreditCardGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\TestingCreditCardGetResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -134,8 +126,7 @@ class Testing
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 

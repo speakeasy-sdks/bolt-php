@@ -28,6 +28,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
@@ -39,7 +40,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressCreateRequest();
-    $request->xPublishableKey = 'provident';
+    $request->xPublishableKey = 'distinctio';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -100,6 +101,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodRequest;
 use \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard;
 use \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCardTag;
@@ -114,7 +116,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddPaymentMethodRequest();
-    $request->xPublishableKey = 'distinctio';
+    $request->xPublishableKey = 'quibusdam';
     $request->paymentMethodCreditCard = new PaymentMethodCreditCard();
     $request->paymentMethodCreditCard->dotTag = PaymentMethodCreditCardTag::CreditCard;
     $request->paymentMethodCreditCard->billingAddressId = 'D4g3h5tBuVYK9';
@@ -183,6 +185,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteRequest;
 use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurity;
 use \bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurityOption1;
@@ -193,7 +196,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressDeleteRequest();
-    $request->xPublishableKey = 'unde';
+    $request->xPublishableKey = 'nulla';
     $request->id = 'D4g3h5tBuVYK9';
 
     $requestSecurity = new AccountAddressDeleteSecurity();
@@ -240,6 +243,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddressEditRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressEditSecurity;
@@ -251,7 +255,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressEditRequest();
-    $request->xPublishableKey = 'nulla';
+    $request->xPublishableKey = 'corrupti';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -309,6 +313,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountExistsRequest;
 use \bolt_dev\bolt\Models\Shared\Identifier;
 use \bolt_dev\bolt\Models\Shared\IdentifierIdentifierType;
@@ -318,7 +323,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountExistsRequest();
-    $request->xPublishableKey = 'corrupti';
+    $request->xPublishableKey = 'illum';
     $request->identifier = new Identifier();
     $request->identifier->identifierType = IdentifierIdentifierType::Email;
     $request->identifier->identifierValue = 'alice@example.com';
@@ -358,6 +363,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountGetRequest;
 use \bolt_dev\bolt\Models\Operations\AccountGetSecurity;
 use \bolt_dev\bolt\Models\Operations\AccountGetSecurityOption1;
@@ -368,7 +374,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountGetRequest();
-    $request->xPublishableKey = 'illum';
+    $request->xPublishableKey = 'vel';
 
     $requestSecurity = new AccountGetSecurity();
     $requestSecurity->option1 = new AccountGetSecurityOption1();

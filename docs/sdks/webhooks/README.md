@@ -27,8 +27,8 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Shared\WebhookInput;
-use \bolt_dev\bolt\Models\Operations\WebhooksCreateSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -40,10 +40,7 @@ try {
     $request->event->eventGroup = EventGroupEventGroup::All;
     $request->url = 'https://www.example.com/webhook';
 
-    $requestSecurity = new WebhooksCreateSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->webhooks->create($request, $requestSecurity);
+    $response = $sdk->webhooks->create($request);
 
     if ($response->webhook !== null) {
         // handle response
@@ -55,10 +52,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [\bolt_dev\bolt\Models\Shared\WebhookInput](../../models/shared/WebhookInput.md)                             | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [\bolt_dev\bolt\Models\Operations\WebhooksCreateSecurity](../../models/operations/WebhooksCreateSecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `$request`                                                                       | [\bolt_dev\bolt\Models\Shared\WebhookInput](../../models/shared/WebhookInput.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -79,8 +75,8 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest;
-use \bolt_dev\bolt\Models\Operations\WebhooksDeleteSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -89,10 +85,7 @@ try {
     $request = new WebhooksDeleteRequest();
     $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';
 
-    $requestSecurity = new WebhooksDeleteSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->webhooks->delete($request, $requestSecurity);
+    $response = $sdk->webhooks->delete($request);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -104,10 +97,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [\bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest](../../models/operations/WebhooksDeleteRequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [\bolt_dev\bolt\Models\Operations\WebhooksDeleteSecurity](../../models/operations/WebhooksDeleteSecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [\bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest](../../models/operations/WebhooksDeleteRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -128,8 +120,8 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\WebhooksGetRequest;
-use \bolt_dev\bolt\Models\Operations\WebhooksGetSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -138,10 +130,7 @@ try {
     $request = new WebhooksGetRequest();
     $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';
 
-    $requestSecurity = new WebhooksGetSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->webhooks->get($request, $requestSecurity);
+    $response = $sdk->webhooks->get($request);
 
     if ($response->webhook !== null) {
         // handle response
@@ -153,10 +142,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\bolt_dev\bolt\Models\Operations\WebhooksGetRequest](../../models/operations/WebhooksGetRequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [\bolt_dev\bolt\Models\Operations\WebhooksGetSecurity](../../models/operations/WebhooksGetSecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [\bolt_dev\bolt\Models\Operations\WebhooksGetRequest](../../models/operations/WebhooksGetRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
@@ -177,20 +165,17 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest;
-use \bolt_dev\bolt\Models\Operations\WebhooksGetAllSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
 
 try {
     $request = new WebhooksGetAllRequest();
-    $request->xPublishableKey = 'magnam';
+    $request->xPublishableKey = 'debitis';
 
-    $requestSecurity = new WebhooksGetAllSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->webhooks->getAll($request, $requestSecurity);
+    $response = $sdk->webhooks->getAll($request);
 
     if ($response->webhooksGetAll200ApplicationJSONObject !== null) {
         // handle response
@@ -202,10 +187,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                   | [\bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest](../../models/operations/WebhooksGetAllRequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [\bolt_dev\bolt\Models\Operations\WebhooksGetAllSecurity](../../models/operations/WebhooksGetAllSecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                 | [\bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest](../../models/operations/WebhooksGetAllRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response

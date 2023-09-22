@@ -29,12 +29,10 @@ class Payments
      * 
      * 
      * @param \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest $request
-     * @param \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeResponse
      */
 	public function initializeGuestPayment(
         \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest $request,
-        \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -53,8 +51,7 @@ class Payments
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('POST', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 

@@ -26,20 +26,17 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest;
-use \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
 
 try {
     $request = new MerchantCallbacksGetRequest();
-    $request->xPublishableKey = 'vel';
+    $request->xPublishableKey = 'error';
 
-    $requestSecurity = new MerchantCallbacksGetSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->configuration->getmerchantCallback($request, $requestSecurity);
+    $response = $sdk->configuration->getmerchantCallback($request);
 
     if ($response->callbackUrls !== null) {
         // handle response
@@ -51,10 +48,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                               | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest](../../models/operations/MerchantCallbacksGetRequest.md)   | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetSecurity](../../models/operations/MerchantCallbacksGetSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                             | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest](../../models/operations/MerchantCallbacksGetRequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 
 
 ### Response
@@ -75,16 +71,13 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetSecurity;
+use \bolt_dev\bolt\Models\Shared\Security;
 
 $sdk = BoltEmbed::builder()
     ->build();
 
 try {
-    $requestSecurity = new MerchantIdentifiersGetSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->configuration->getmerchantIdenitfier($requestSecurity);
+    $response = $sdk->configuration->getmerchantIdenitfier();
 
     if ($response->identifiers !== null) {
         // handle response
@@ -93,12 +86,6 @@ try {
     // handle exception
 }
 ```
-
-### Parameters
-
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetSecurity](../../models/operations/MerchantIdentifiersGetSecurity.md) | :heavy_check_mark:                                                                                                           | The security requirements to use for the request.                                                                            |
 
 
 ### Response
@@ -120,16 +107,16 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest;
 use \bolt_dev\bolt\Models\Shared\CallbackUrls;
-use \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
 
 try {
     $request = new MerchantCallbacksUpdateRequest();
-    $request->xPublishableKey = 'error';
+    $request->xPublishableKey = 'deserunt';
     $request->callbackUrls = new CallbackUrls();
     $request->callbackUrls->accountPage = 'https://www.example.com/account';
     $request->callbackUrls->baseDomain = 'https://www.example.com/';
@@ -151,10 +138,7 @@ try {
     $request->callbackUrls->updateCart = 'https://www.example.com/bolt/cart';
     $request->callbackUrls->validateAdditionalAccountData = 'https://www.example.com/bolt/validate-account';
 
-    $requestSecurity = new MerchantCallbacksUpdateSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->configuration->updatemerchantCallback($request, $requestSecurity);
+    $response = $sdk->configuration->updatemerchantCallback($request);
 
     if ($response->callbackUrls !== null) {
         // handle response
@@ -166,10 +150,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest](../../models/operations/MerchantCallbacksUpdateRequest.md)   | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `security`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateSecurity](../../models/operations/MerchantCallbacksUpdateSecurity.md) | :heavy_check_mark:                                                                                                             | The security requirements to use for the request.                                                                              |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest](../../models/operations/MerchantCallbacksUpdateRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 
 
 ### Response

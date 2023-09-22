@@ -38,8 +38,6 @@ composer update
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```php
 <?php
 
@@ -47,6 +45,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
@@ -58,7 +57,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressCreateRequest();
-    $request->xPublishableKey = 'corrupti';
+    $request->xPublishableKey = 'provident';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -127,6 +126,18 @@ try {
 * [get](docs/sdks/webhooks/README.md#get) - Retrieve information for a specific webhook
 * [getAll](docs/sdks/webhooks/README.md#getall) - Retrieve information about all existing webhooks
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

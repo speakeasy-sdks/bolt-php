@@ -26,6 +26,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest;
 use \bolt_dev\bolt\Models\Shared\GuestPaymentMethodInitializeRequest;
 use \bolt_dev\bolt\Models\Shared\Cart;
@@ -35,14 +36,13 @@ use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
 use \bolt_dev\bolt\Models\Shared\PaymentMethodPaypal;
 use \bolt_dev\bolt\Models\Shared\PaymentMethodPaypalTag;
-use \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
 
 try {
     $request = new GuestPaymentsInitializeRequest();
-    $request->xPublishableKey = 'deserunt';
+    $request->xPublishableKey = 'suscipit';
     $request->guestPaymentMethodInitializeRequest = new GuestPaymentMethodInitializeRequest();
     $request->guestPaymentMethodInitializeRequest->cart = new Cart();
     $request->guestPaymentMethodInitializeRequest->cart->amounts = new Amounts();
@@ -66,10 +66,7 @@ try {
     $request->guestPaymentMethodInitializeRequest->paymentMethod->cancel = 'www.example.com/handle_paypal_cancel';
     $request->guestPaymentMethodInitializeRequest->paymentMethod->success = 'www.example.com/handle_paypal_success';
 
-    $requestSecurity = new GuestPaymentsInitializeSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->payments->initializeGuestPayment($request, $requestSecurity);
+    $response = $sdk->payments->initializeGuestPayment($request);
 
     if ($response->paymentMethodInitializeResponse !== null) {
         // handle response
@@ -81,10 +78,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest](../../models/operations/GuestPaymentsInitializeRequest.md)   | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `security`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeSecurity](../../models/operations/GuestPaymentsInitializeSecurity.md) | :heavy_check_mark:                                                                                                             | The security requirements to use for the request.                                                                              |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest](../../models/operations/GuestPaymentsInitializeRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 
 
 ### Response
@@ -107,6 +103,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeRequest;
 use \bolt_dev\bolt\Models\Shared\PaymentMethodInitializeRequest;
 use \bolt_dev\bolt\Models\Shared\Cart;
@@ -125,7 +122,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new PaymentsInitializeRequest();
-    $request->xPublishableKey = 'suscipit';
+    $request->xPublishableKey = 'iure';
     $request->paymentMethodInitializeRequest = new PaymentMethodInitializeRequest();
     $request->paymentMethodInitializeRequest->cart = new Cart();
     $request->paymentMethodInitializeRequest->cart->amounts = new Amounts();

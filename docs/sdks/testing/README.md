@@ -26,10 +26,10 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput;
 use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataEmailState;
 use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataPhoneState;
-use \bolt_dev\bolt\Models\Operations\TestingAccountCreateSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -42,10 +42,7 @@ try {
     $request->isMigrated = true;
     $request->phoneState = AccountTestCreationDataPhoneState::Verified;
 
-    $requestSecurity = new TestingAccountCreateSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->testing->createAccount($request, $requestSecurity);
+    $response = $sdk->testing->createAccount($request);
 
     if ($response->accountTestCreationData !== null) {
         // handle response
@@ -57,10 +54,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                               | [\bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput](../../models/shared/AccountTestCreationDataInput.md)         | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\TestingAccountCreateSecurity](../../models/operations/TestingAccountCreateSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                                       | [\bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput](../../models/shared/AccountTestCreationDataInput.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
@@ -84,11 +80,11 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate;
 use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateStatus;
 use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetails;
 use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetailsStatus;
-use \bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateSecurity;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -102,10 +98,7 @@ try {
     ];
     $request->trackingNumber = 'MockBolt-143292';
 
-    $requestSecurity = new TestingShipmentTrackingCreateSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->testing->createShipmentTracking($request, $requestSecurity);
+    $response = $sdk->testing->createShipmentTracking($request);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -117,10 +110,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                                 | [\bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate](../../models/shared/ShipmentTrackingUpdate.md)                                       | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
-| `security`                                                                                                                                 | [\bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateSecurity](../../models/operations/TestingShipmentTrackingCreateSecurity.md) | :heavy_check_mark:                                                                                                                         | The security requirements to use for the request.                                                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `$request`                                                                                           | [\bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate](../../models/shared/ShipmentTrackingUpdate.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
@@ -143,16 +135,13 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Operations\TestingCreditCardGetSecurity;
+use \bolt_dev\bolt\Models\Shared\Security;
 
 $sdk = BoltEmbed::builder()
     ->build();
 
 try {
-    $requestSecurity = new TestingCreditCardGetSecurity();
-    $requestSecurity->apiKey = '';
-
-    $response = $sdk->testing->getCreditCard($requestSecurity);
+    $response = $sdk->testing->getCreditCard();
 
     if ($response->creditCard !== null) {
         // handle response
@@ -161,12 +150,6 @@ try {
     // handle exception
 }
 ```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\TestingCreditCardGetSecurity](../../models/operations/TestingCreditCardGetSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
 
 
 ### Response

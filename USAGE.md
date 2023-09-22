@@ -8,6 +8,7 @@ declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
 use \bolt_dev\bolt\BoltEmbed;
+use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
 use \bolt_dev\bolt\Models\Shared\AddressListing;
 use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;

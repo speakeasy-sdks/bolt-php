@@ -27,12 +27,10 @@ class Webhooks
      * Create a new webhook to receive notifications from Bolt about various events, such as transaction status.
      * 
      * @param \bolt_dev\bolt\Models\Shared\WebhookInput $request
-     * @param \bolt_dev\bolt\Models\Operations\WebhooksCreateSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\WebhooksCreateResponse
      */
 	public function create(
         \bolt_dev\bolt\Models\Shared\WebhookInput $request,
-        \bolt_dev\bolt\Models\Operations\WebhooksCreateSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksCreateResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -47,8 +45,7 @@ class Webhooks
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('PUT', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('PUT', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -73,12 +70,10 @@ class Webhooks
      * Delete an existing webhook. You will no longer receive notifications from Bolt about its events.
      * 
      * @param \bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest $request
-     * @param \bolt_dev\bolt\Models\Operations\WebhooksDeleteSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse
      */
 	public function delete(
         ?\bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest $request,
-        \bolt_dev\bolt\Models\Operations\WebhooksDeleteSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -88,8 +83,7 @@ class Webhooks
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('DELETE', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('DELETE', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -116,12 +110,10 @@ class Webhooks
      * Retrieve information for an existing webhook.
      * 
      * @param \bolt_dev\bolt\Models\Operations\WebhooksGetRequest $request
-     * @param \bolt_dev\bolt\Models\Operations\WebhooksGetSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\WebhooksGetResponse
      */
 	public function get(
         ?\bolt_dev\bolt\Models\Operations\WebhooksGetRequest $request,
-        \bolt_dev\bolt\Models\Operations\WebhooksGetSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksGetResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -131,8 +123,7 @@ class Webhooks
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
@@ -163,12 +154,10 @@ class Webhooks
      * Retrieve information about all existing webhooks.
      * 
      * @param \bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest $request
-     * @param \bolt_dev\bolt\Models\Operations\WebhooksGetAllSecurity $security
      * @return \bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse
      */
 	public function getAll(
         ?\bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest $request,
-        \bolt_dev\bolt\Models\Operations\WebhooksGetAllSecurity $security,
     ): \bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -182,8 +171,7 @@ class Webhooks
         $options['headers']['Accept'] = 'application/json';
         $options['headers']['user-agent'] = sprintf('speakeasy-sdk/%s %s %s %s', $this->sdkConfiguration->language, $this->sdkConfiguration->sdkVersion, $this->sdkConfiguration->genVersion, $this->sdkConfiguration->openapiDocVersion);
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('GET', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 

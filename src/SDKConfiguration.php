@@ -12,7 +12,7 @@ class SDKConfiguration
 {
 	public ?\GuzzleHttp\ClientInterface $defaultClient = null;
 	public ?\GuzzleHttp\ClientInterface $securityClient = null;
-	
+	public ?Models\Shared\Security $security = null;
 	public string $serverUrl = '';
 	public int $serverIndex = 0;
 	/** @var array<array<string, string>> */
@@ -26,8 +26,8 @@ class SDKConfiguration
 	];
 	public string $language = 'php';
 	public string $openapiDocVersion = '3.0.1';
-	public string $sdkVersion = '0.3.1';
-	public string $genVersion = '2.115.2';
+	public string $sdkVersion = '0.4.0';
+	public string $genVersion = '2.125.1';
 
 	public function getServerUrl(): string
 	{
