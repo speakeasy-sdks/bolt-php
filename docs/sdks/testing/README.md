@@ -1,4 +1,5 @@
 # Testing
+(*testing*)
 
 ## Overview
 
@@ -36,7 +37,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountTestCreationDataInput();
-    $request->deactivateAt = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2017-07-21T17:32:28Z');
+    $request->deactivateAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2017-07-21T17:32:28Z');
     $request->emailState = AccountTestCreationDataEmailState::Unverified;
     $request->hasAddress = true;
     $request->isMigrated = true;
@@ -91,7 +92,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new ShipmentTrackingUpdate();
-    $request->deliveryDate = DateTime::createFromFormat('Y-m-d\TH:i:sP', '2014-08-23:T06:00:00Z');
+    $request->deliveryDate = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2014-08-23:T06:00:00Z');
     $request->status = ShipmentTrackingUpdateStatus::InTransit;
     $request->trackingDetails = [
         new ShipmentTrackingUpdateTrackingDetails(),

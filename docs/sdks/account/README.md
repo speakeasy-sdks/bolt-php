@@ -1,4 +1,5 @@
 # Account
+(*account*)
 
 ## Overview
 
@@ -40,7 +41,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressCreateRequest();
-    $request->xPublishableKey = 'distinctio';
+    $request->xPublishableKey = 'Maserati Bespoke frictionless';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -116,24 +117,13 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddPaymentMethodRequest();
-    $request->xPublishableKey = 'quibusdam';
+    $request->xPublishableKey = 'violet Scandium';
     $request->paymentMethodCreditCard = new PaymentMethodCreditCard();
     $request->paymentMethodCreditCard->dotTag = PaymentMethodCreditCardTag::CreditCard;
     $request->paymentMethodCreditCard->billingAddressId = 'D4g3h5tBuVYK9';
-    $request->paymentMethodCreditCard->billingAddressInput = new AddressReferenceExplicit();
-    $request->paymentMethodCreditCard->billingAddressInput->dotTag = AddressReferenceExplicitTag::Explicit;
-    $request->paymentMethodCreditCard->billingAddressInput->company = 'ACME Corporation';
-    $request->paymentMethodCreditCard->billingAddressInput->countryCode = 'US';
-    $request->paymentMethodCreditCard->billingAddressInput->email = 'alice@example.com';
-    $request->paymentMethodCreditCard->billingAddressInput->firstName = 'Alice';
+    $request->paymentMethodCreditCard->billingAddressInput = new AddressReferenceId();
+    $request->paymentMethodCreditCard->billingAddressInput->dotTag = AddressReferenceIdTag::Id;
     $request->paymentMethodCreditCard->billingAddressInput->id = 'D4g3h5tBuVYK9';
-    $request->paymentMethodCreditCard->billingAddressInput->lastName = 'Baker';
-    $request->paymentMethodCreditCard->billingAddressInput->locality = 'San Francisco';
-    $request->paymentMethodCreditCard->billingAddressInput->phone = '+14155550199';
-    $request->paymentMethodCreditCard->billingAddressInput->postalCode = '94105';
-    $request->paymentMethodCreditCard->billingAddressInput->region = 'CA';
-    $request->paymentMethodCreditCard->billingAddressInput->streetAddress1 = '535 Mission St, Ste 1401';
-    $request->paymentMethodCreditCard->billingAddressInput->streetAddress2 = 'c/o Shipping Department';
     $request->paymentMethodCreditCard->bin = '411111';
     $request->paymentMethodCreditCard->expiration = '2025-03';
     $request->paymentMethodCreditCard->id = 'X5h6j8uLpVGK0';
@@ -196,7 +186,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressDeleteRequest();
-    $request->xPublishableKey = 'nulla';
+    $request->xPublishableKey = 'Grocery Configurable Larissa';
     $request->id = 'D4g3h5tBuVYK9';
 
     $requestSecurity = new AccountAddressDeleteSecurity();
@@ -255,7 +245,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressEditRequest();
-    $request->xPublishableKey = 'corrupti';
+    $request->xPublishableKey = 'Latin Lead';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -323,7 +313,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountExistsRequest();
-    $request->xPublishableKey = 'illum';
+    $request->xPublishableKey = 'Manager';
     $request->identifier = new Identifier();
     $request->identifier->identifierType = IdentifierIdentifierType::Email;
     $request->identifier->identifierValue = 'alice@example.com';
@@ -374,7 +364,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountGetRequest();
-    $request->xPublishableKey = 'vel';
+    $request->xPublishableKey = 'Northeast Hatchback Kia';
 
     $requestSecurity = new AccountGetSecurity();
     $requestSecurity->option1 = new AccountGetSecurityOption1();

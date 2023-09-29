@@ -1,4 +1,5 @@
 # Configuration
+(*configuration*)
 
 ## Overview
 
@@ -34,7 +35,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new MerchantCallbacksGetRequest();
-    $request->xPublishableKey = 'error';
+    $request->xPublishableKey = 'Lead';
 
     $response = $sdk->configuration->getmerchantCallback($request);
 
@@ -116,7 +117,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new MerchantCallbacksUpdateRequest();
-    $request->xPublishableKey = 'deserunt';
+    $request->xPublishableKey = 'female maroon';
     $request->callbackUrls = new CallbackUrls();
     $request->callbackUrls->accountPage = 'https://www.example.com/account';
     $request->callbackUrls->baseDomain = 'https://www.example.com/';

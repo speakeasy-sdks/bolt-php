@@ -1,4 +1,5 @@
 # Payments
+(*payments*)
 
 ## Overview
 
@@ -42,7 +43,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new GuestPaymentsInitializeRequest();
-    $request->xPublishableKey = 'suscipit';
+    $request->xPublishableKey = 'composite';
     $request->guestPaymentMethodInitializeRequest = new GuestPaymentMethodInitializeRequest();
     $request->guestPaymentMethodInitializeRequest->cart = new Cart();
     $request->guestPaymentMethodInitializeRequest->cart->amounts = new Amounts();
@@ -122,7 +123,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new PaymentsInitializeRequest();
-    $request->xPublishableKey = 'iure';
+    $request->xPublishableKey = 'Nissan';
     $request->paymentMethodInitializeRequest = new PaymentMethodInitializeRequest();
     $request->paymentMethodInitializeRequest->cart = new Cart();
     $request->paymentMethodInitializeRequest->cart->amounts = new Amounts();

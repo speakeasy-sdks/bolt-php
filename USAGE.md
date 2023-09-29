@@ -20,7 +20,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressCreateRequest();
-    $request->xPublishableKey = 'corrupti';
+    $request->xPublishableKey = 'Maserati Bespoke frictionless';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
