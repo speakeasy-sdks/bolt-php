@@ -104,10 +104,6 @@ require_once 'vendor/autoload.php';
 use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodRequest;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCardTag;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCardNetwork;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCardType;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurity;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurityOption1;
 use \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurityOption2;
@@ -117,20 +113,31 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddPaymentMethodRequest();
-    $request->xPublishableKey = 'violet Scandium';
-    $request->paymentMethodCreditCard = new PaymentMethodCreditCard();
-    $request->paymentMethodCreditCard->dotTag = PaymentMethodCreditCardTag::CreditCard;
-    $request->paymentMethodCreditCard->billingAddressId = 'D4g3h5tBuVYK9';
-    $request->paymentMethodCreditCard->billingAddressInput = new AddressReferenceId();
-    $request->paymentMethodCreditCard->billingAddressInput->dotTag = AddressReferenceIdTag::Id;
-    $request->paymentMethodCreditCard->billingAddressInput->id = 'D4g3h5tBuVYK9';
-    $request->paymentMethodCreditCard->bin = '411111';
-    $request->paymentMethodCreditCard->expiration = '2025-03';
-    $request->paymentMethodCreditCard->id = 'X5h6j8uLpVGK0';
-    $request->paymentMethodCreditCard->last4 = '1004';
-    $request->paymentMethodCreditCard->network = PaymentMethodCreditCardNetwork::Visa;
-    $request->paymentMethodCreditCard->token = 'a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0';
-    $request->paymentMethodCreditCard->type = PaymentMethodCreditCardType::Credit;
+    $request->requestBody = new PaymentMethodCreditCard();
+    $request->requestBody->dotTag = PaymentMethodCreditCardTag::CreditCard;
+    $request->requestBody->billingAddressId = 'D4g3h5tBuVYK9';
+    $request->requestBody->billingAddressInput = new AddressReferenceExplicit();
+    $request->requestBody->billingAddressInput->dotTag = AddressReferenceExplicitTag::Explicit;
+    $request->requestBody->billingAddressInput->company = 'ACME Corporation';
+    $request->requestBody->billingAddressInput->countryCode = 'US';
+    $request->requestBody->billingAddressInput->email = 'alice@example.com';
+    $request->requestBody->billingAddressInput->firstName = 'Alice';
+    $request->requestBody->billingAddressInput->id = 'D4g3h5tBuVYK9';
+    $request->requestBody->billingAddressInput->lastName = 'Baker';
+    $request->requestBody->billingAddressInput->locality = 'San Francisco';
+    $request->requestBody->billingAddressInput->phone = '+14155550199';
+    $request->requestBody->billingAddressInput->postalCode = '94105';
+    $request->requestBody->billingAddressInput->region = 'CA';
+    $request->requestBody->billingAddressInput->streetAddress1 = '535 Mission St, Ste 1401';
+    $request->requestBody->billingAddressInput->streetAddress2 = 'c/o Shipping Department';
+    $request->requestBody->bin = '411111';
+    $request->requestBody->expiration = '2025-03';
+    $request->requestBody->id = 'X5h6j8uLpVGK0';
+    $request->requestBody->last4 = '1004';
+    $request->requestBody->network = PaymentMethodCreditCardNetwork::Visa;
+    $request->requestBody->token = 'a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0';
+    $request->requestBody->type = PaymentMethodCreditCardType::Credit;
+    $request->xPublishableKey = 'payment violet Gasoline';
 
     $requestSecurity = new AccountAddPaymentMethodSecurity();
     $requestSecurity->option1 = new AccountAddPaymentMethodSecurityOption1();
@@ -139,7 +146,7 @@ try {
 
     $response = $sdk->account->addPaymentMethod($request, $requestSecurity);
 
-    if ($response->paymentMethodCreditCard !== null) {
+    if ($response->paymentMethod !== null) {
         // handle response
     }
 } catch (Exception $e) {

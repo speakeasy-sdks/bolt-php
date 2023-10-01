@@ -36,14 +36,6 @@ class MerchantCallbacksUpdateResponse
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
     /**
-     * The URL is invalid and cannot be set
-     * 
-     * @var ?\bolt_dev\bolt\Models\Shared\CallbackUrlErrorInvalidUrl $callbackUrlErrorInvalidUrl
-     */
-	
-    public ?\bolt_dev\bolt\Models\Shared\CallbackUrlErrorInvalidUrl $callbackUrlErrorInvalidUrl = null;
-    
-    /**
      * Callbacks URLs were successfully updated
      * 
      * @var ?\bolt_dev\bolt\Models\Shared\CallbackUrls $callbackUrls
@@ -51,12 +43,20 @@ class MerchantCallbacksUpdateResponse
 	
     public ?\bolt_dev\bolt\Models\Shared\CallbackUrls $callbackUrls = null;
     
+    /**
+     * The URL is invalid and cannot be set
+     * 
+     * @var mixed $merchantCallbacksUpdate400ApplicationJSONOneOf
+     */
+	
+    public mixed $merchantCallbacksUpdate400ApplicationJSONOneOf = null;
+    
 	public function __construct()
 	{
 		$this->contentType = "";
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->callbackUrlErrorInvalidUrl = null;
 		$this->callbackUrls = null;
+		$this->merchantCallbacksUpdate400ApplicationJSONOneOf = null;
 	}
 }

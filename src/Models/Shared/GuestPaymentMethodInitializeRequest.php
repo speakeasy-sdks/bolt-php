@@ -16,12 +16,12 @@ class GuestPaymentMethodInitializeRequest
     public Cart $cart;
     
 	#[\JMS\Serializer\Annotation\SerializedName('payment_method')]
-    #[\JMS\Serializer\Annotation\Type('bolt_dev\bolt\Models\Shared\PaymentMethodPaypal')]
-    public PaymentMethodPaypal $paymentMethod;
+    #[\JMS\Serializer\Annotation\Type('mixed')]
+    public mixed $paymentMethod;
     
 	public function __construct()
 	{
 		$this->cart = new \bolt_dev\bolt\Models\Shared\Cart();
-		$this->paymentMethod = new \bolt_dev\bolt\Models\Shared\PaymentMethodPaypal();
+		$this->paymentMethod = null;
 	}
 }

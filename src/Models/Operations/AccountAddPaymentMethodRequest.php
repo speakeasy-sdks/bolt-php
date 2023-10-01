@@ -11,6 +11,9 @@ namespace bolt_dev\bolt\Models\Operations;
 use \bolt_dev\bolt\Utils\SpeakeasyMetadata;
 class AccountAddPaymentMethodRequest
 {
+	#[SpeakeasyMetadata('request:mediaType=application/json')]
+    public mixed $requestBody;
+    
     /**
      * The publicly viewable identifier used to identify a merchant division.
      * 
@@ -19,12 +22,9 @@ class AccountAddPaymentMethodRequest
 	#[SpeakeasyMetadata('header:style=simple,explode=false,name=X-Publishable-Key')]
     public string $xPublishableKey;
     
-	#[SpeakeasyMetadata('request:mediaType=application/json')]
-    public \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard $paymentMethodCreditCard;
-    
 	public function __construct()
 	{
+		$this->requestBody = null;
 		$this->xPublishableKey = "";
-		$this->paymentMethodCreditCard = new \bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard();
 	}
 }

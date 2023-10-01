@@ -35,8 +35,6 @@ use \bolt_dev\bolt\Models\Shared\Amounts;
 use \bolt_dev\bolt\Models\Shared\CartDiscount;
 use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodPaypal;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodPaypalTag;
 
 $sdk = BoltEmbed::builder()
     ->build();
@@ -112,8 +110,6 @@ use \bolt_dev\bolt\Models\Shared\Amounts;
 use \bolt_dev\bolt\Models\Shared\CartDiscount;
 use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodSavedPaymentMethod;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodSavedPaymentMethodTag;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurity;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption1;
 use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption2;

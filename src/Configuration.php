@@ -147,7 +147,7 @@ class Configuration
         else if ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->callbackUrlErrorInvalidUrl = $serializer->deserialize((string)$httpResponse->getBody(), 'bolt_dev\bolt\Models\Shared\CallbackUrlErrorInvalidUrl', 'json');
+                $response->merchantCallbacksUpdate400ApplicationJSONOneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
             }
         }
 

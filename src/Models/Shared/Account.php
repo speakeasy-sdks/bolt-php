@@ -23,10 +23,10 @@ class Account
     /**
      * $paymentMethods
      * 
-     * @var array<\bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard> $paymentMethods
+     * @var array<mixed> $paymentMethods
      */
 	#[\JMS\Serializer\Annotation\SerializedName('payment_methods')]
-    #[\JMS\Serializer\Annotation\Type('array<bolt_dev\bolt\Models\Shared\PaymentMethodCreditCard>')]
+    #[\JMS\Serializer\Annotation\Type('array<mixed>')]
     public array $paymentMethods;
     
 	#[\JMS\Serializer\Annotation\SerializedName('profile')]
