@@ -60,10 +60,7 @@ try {
     $request->guestPaymentMethodInitializeRequest->cart->shipments = [
         new CartShipment(),
     ];
-    $request->guestPaymentMethodInitializeRequest->paymentMethod = new PaymentMethodPaypal();
-    $request->guestPaymentMethodInitializeRequest->paymentMethod->dotTag = PaymentMethodPaypalTag::Paypal;
-    $request->guestPaymentMethodInitializeRequest->paymentMethod->cancel = 'www.example.com/handle_paypal_cancel';
-    $request->guestPaymentMethodInitializeRequest->paymentMethod->success = 'www.example.com/handle_paypal_success';
+    $request->guestPaymentMethodInitializeRequest->paymentMethod = 'Auto';
 
     $response = $sdk->payments->initializeGuestPayment($request);
 
@@ -138,9 +135,7 @@ try {
     $request->paymentMethodInitializeRequest->cart->shipments = [
         new CartShipment(),
     ];
-    $request->paymentMethodInitializeRequest->paymentMethod = new PaymentMethodSavedPaymentMethod();
-    $request->paymentMethodInitializeRequest->paymentMethod->dotTag = PaymentMethodSavedPaymentMethodTag::SavedPaymentMethod;
-    $request->paymentMethodInitializeRequest->paymentMethod->id = 'id';
+    $request->paymentMethodInitializeRequest->paymentMethod = 'Baby';
 
     $requestSecurity = new PaymentsInitializeSecurity();
     $requestSecurity->option1 = new PaymentsInitializeSecurityOption1();

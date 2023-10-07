@@ -36,9 +36,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new WebhookInput();
-    $request->event = new EventGroup();
-    $request->event->dotTag = EventGroupTag::Group;
-    $request->event->eventGroup = EventGroupEventGroup::All;
+    $request->event = 'online';
     $request->url = 'https://www.example.com/webhook';
 
     $response = $sdk->webhooks->create($request);

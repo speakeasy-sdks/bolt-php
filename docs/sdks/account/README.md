@@ -113,31 +113,8 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddPaymentMethodRequest();
-    $request->requestBody = new PaymentMethodCreditCard();
-    $request->requestBody->dotTag = PaymentMethodCreditCardTag::CreditCard;
-    $request->requestBody->billingAddressId = 'D4g3h5tBuVYK9';
-    $request->requestBody->billingAddressInput = new AddressReferenceExplicit();
-    $request->requestBody->billingAddressInput->dotTag = AddressReferenceExplicitTag::Explicit;
-    $request->requestBody->billingAddressInput->company = 'ACME Corporation';
-    $request->requestBody->billingAddressInput->countryCode = 'US';
-    $request->requestBody->billingAddressInput->email = 'alice@example.com';
-    $request->requestBody->billingAddressInput->firstName = 'Alice';
-    $request->requestBody->billingAddressInput->id = 'D4g3h5tBuVYK9';
-    $request->requestBody->billingAddressInput->lastName = 'Baker';
-    $request->requestBody->billingAddressInput->locality = 'San Francisco';
-    $request->requestBody->billingAddressInput->phone = '+14155550199';
-    $request->requestBody->billingAddressInput->postalCode = '94105';
-    $request->requestBody->billingAddressInput->region = 'CA';
-    $request->requestBody->billingAddressInput->streetAddress1 = '535 Mission St, Ste 1401';
-    $request->requestBody->billingAddressInput->streetAddress2 = 'c/o Shipping Department';
-    $request->requestBody->bin = '411111';
-    $request->requestBody->expiration = '2025-03';
-    $request->requestBody->id = 'X5h6j8uLpVGK0';
-    $request->requestBody->last4 = '1004';
-    $request->requestBody->network = PaymentMethodCreditCardNetwork::Visa;
-    $request->requestBody->token = 'a1B2c3D4e5F6G7H8i9J0k1L2m3N4o5P6Q7r8S9t0';
-    $request->requestBody->type = PaymentMethodCreditCardType::Credit;
-    $request->xPublishableKey = 'payment violet Gasoline';
+    $request->requestBody = 'Data';
+    $request->xPublishableKey = 'Scandium Tobago';
 
     $requestSecurity = new AccountAddPaymentMethodSecurity();
     $requestSecurity->option1 = new AccountAddPaymentMethodSecurityOption1();
