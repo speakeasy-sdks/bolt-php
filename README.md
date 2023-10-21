@@ -44,20 +44,19 @@ composer update
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
-use \bolt_dev\bolt\Models\Shared\AddressListing;
-use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
-use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption1;
-use \bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption2;
+use bolt_dev\bolt\BoltEmbed;
+use bolt_dev\bolt\Models\Shared\Security;
+use bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
+use bolt_dev\bolt\Models\Shared\AddressListing;
+use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
+use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption1;
+use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption2;
 
-$sdk = BoltEmbed::builder()
-    ->build();
+$sdk = BoltEmbed::builder()->build();
 
 try {
     $request = new AccountAddressCreateRequest();
-    $request->xPublishableKey = 'Maserati Bespoke frictionless';
+    $request->xPublishableKey = 'string';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -86,6 +85,7 @@ try {
 } catch (Exception $e) {
     // handle exception
 }
+
 ```
 <!-- End SDK Example Usage -->
 

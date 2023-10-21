@@ -32,7 +32,11 @@ use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput;
 use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataEmailState;
 use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataPhoneState;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -87,7 +91,11 @@ use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateStatus;
 use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetails;
 use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetailsStatus;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -138,7 +146,11 @@ require_once 'vendor/autoload.php';
 use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {

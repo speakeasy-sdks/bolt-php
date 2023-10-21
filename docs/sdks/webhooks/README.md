@@ -31,12 +31,16 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Shared\WebhookInput;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new WebhookInput();
-    $request->event = 'online';
+    $request->event = 'string';
     $request->url = 'https://www.example.com/webhook';
 
     $response = $sdk->webhooks->create($request);
@@ -77,7 +81,11 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -122,7 +130,11 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\WebhooksGetRequest;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -167,12 +179,16 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new WebhooksGetAllRequest();
-    $request->xPublishableKey = 'Van Reggae';
+    $request->xPublishableKey = 'string';
 
     $response = $sdk->webhooks->getAll($request);
 

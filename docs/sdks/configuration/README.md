@@ -30,12 +30,16 @@ use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new MerchantCallbacksGetRequest();
-    $request->xPublishableKey = 'Lead';
+    $request->xPublishableKey = 'string';
 
     $response = $sdk->configuration->getmerchantCallback($request);
 
@@ -74,7 +78,11 @@ require_once 'vendor/autoload.php';
 use \bolt_dev\bolt\BoltEmbed;
 use \bolt_dev\bolt\Models\Shared\Security;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
@@ -112,12 +120,16 @@ use \bolt_dev\bolt\Models\Shared\Security;
 use \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest;
 use \bolt_dev\bolt\Models\Shared\CallbackUrls;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new MerchantCallbacksUpdateRequest();
-    $request->xPublishableKey = 'female maroon';
+    $request->xPublishableKey = 'string';
     $request->callbackUrls = new CallbackUrls();
     $request->callbackUrls->accountPage = 'https://www.example.com/account';
     $request->callbackUrls->baseDomain = 'https://www.example.com/';

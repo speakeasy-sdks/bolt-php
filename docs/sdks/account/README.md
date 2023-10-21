@@ -41,7 +41,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressCreateRequest();
-    $request->xPublishableKey = 'Maserati Bespoke frictionless';
+    $request->xPublishableKey = 'string';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -113,8 +113,8 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddPaymentMethodRequest();
-    $request->requestBody = 'Data';
-    $request->xPublishableKey = 'Scandium Tobago';
+    $request->requestBody = 'string';
+    $request->xPublishableKey = 'string';
 
     $requestSecurity = new AccountAddPaymentMethodSecurity();
     $requestSecurity->option1 = new AccountAddPaymentMethodSecurityOption1();
@@ -170,7 +170,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressDeleteRequest();
-    $request->xPublishableKey = 'Grocery Configurable Larissa';
+    $request->xPublishableKey = 'string';
     $request->id = 'D4g3h5tBuVYK9';
 
     $requestSecurity = new AccountAddressDeleteSecurity();
@@ -229,7 +229,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountAddressEditRequest();
-    $request->xPublishableKey = 'Latin Lead';
+    $request->xPublishableKey = 'string';
     $request->addressListing = new AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
@@ -292,12 +292,16 @@ use \bolt_dev\bolt\Models\Operations\AccountExistsRequest;
 use \bolt_dev\bolt\Models\Shared\Identifier;
 use \bolt_dev\bolt\Models\Shared\IdentifierIdentifierType;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new AccountExistsRequest();
-    $request->xPublishableKey = 'Manager';
+    $request->xPublishableKey = 'string';
     $request->identifier = new Identifier();
     $request->identifier->identifierType = IdentifierIdentifierType::Email;
     $request->identifier->identifierValue = 'alice@example.com';
@@ -348,7 +352,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new AccountGetRequest();
-    $request->xPublishableKey = 'Northeast Hatchback Kia';
+    $request->xPublishableKey = 'string';
 
     $requestSecurity = new AccountGetSecurity();
     $requestSecurity->option1 = new AccountGetSecurityOption1();

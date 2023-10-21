@@ -36,12 +36,16 @@ use \bolt_dev\bolt\Models\Shared\CartDiscount;
 use \bolt_dev\bolt\Models\Shared\CartItem;
 use \bolt_dev\bolt\Models\Shared\CartShipment;
 
+$security = new Security();
+$security->apiKey = '';
+
 $sdk = BoltEmbed::builder()
+    ->setSecurity($security)
     ->build();
 
 try {
     $request = new GuestPaymentsInitializeRequest();
-    $request->xPublishableKey = 'composite';
+    $request->xPublishableKey = 'string';
     $request->guestPaymentMethodInitializeRequest = new GuestPaymentMethodInitializeRequest();
     $request->guestPaymentMethodInitializeRequest->cart = new Cart();
     $request->guestPaymentMethodInitializeRequest->cart->amounts = new Amounts();
@@ -60,7 +64,7 @@ try {
     $request->guestPaymentMethodInitializeRequest->cart->shipments = [
         new CartShipment(),
     ];
-    $request->guestPaymentMethodInitializeRequest->paymentMethod = 'Auto';
+    $request->guestPaymentMethodInitializeRequest->paymentMethod = 'string';
 
     $response = $sdk->payments->initializeGuestPayment($request);
 
@@ -116,7 +120,7 @@ $sdk = BoltEmbed::builder()
 
 try {
     $request = new PaymentsInitializeRequest();
-    $request->xPublishableKey = 'Nissan';
+    $request->xPublishableKey = 'string';
     $request->paymentMethodInitializeRequest = new PaymentMethodInitializeRequest();
     $request->paymentMethodInitializeRequest->cart = new Cart();
     $request->paymentMethodInitializeRequest->cart->amounts = new Amounts();
@@ -135,7 +139,7 @@ try {
     $request->paymentMethodInitializeRequest->cart->shipments = [
         new CartShipment(),
     ];
-    $request->paymentMethodInitializeRequest->paymentMethod = 'Baby';
+    $request->paymentMethodInitializeRequest->paymentMethod = 'string';
 
     $requestSecurity = new PaymentsInitializeSecurity();
     $requestSecurity->option1 = new PaymentsInitializeSecurityOption1();
