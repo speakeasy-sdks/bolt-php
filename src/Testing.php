@@ -27,11 +27,11 @@ class Testing
      * Create a Bolt shopper account for testing purposes.
      * 
      * 
-     * @param \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput $request
+     * @param \bolt_dev\bolt\Models\Shared\AccountTestCreationData $request
      * @return \bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse
      */
 	public function createAccount(
-        \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput $request,
+        \bolt_dev\bolt\Models\Shared\AccountTestCreationData $request,
     ): \bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse
     {
         $baseUrl = Utils\Utils::templateUrl($this->sdkConfiguration->getServerUrl(), $this->sdkConfiguration->getServerDefaults());
@@ -50,8 +50,10 @@ class Testing
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -96,8 +98,10 @@ class Testing
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -130,8 +134,10 @@ class Testing
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\TestingCreditCardGetResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         

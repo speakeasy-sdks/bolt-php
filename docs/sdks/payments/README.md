@@ -1,5 +1,5 @@
 # Payments
-(*payments*)
+
 
 ## Overview
 
@@ -26,43 +26,37 @@ Bolt when it is updated or finalized for guest shoppers.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest;
-use \bolt_dev\bolt\Models\Shared\GuestPaymentMethodInitializeRequest;
-use \bolt_dev\bolt\Models\Shared\Cart;
-use \bolt_dev\bolt\Models\Shared\Amounts;
-use \bolt_dev\bolt\Models\Shared\CartDiscount;
-use \bolt_dev\bolt\Models\Shared\CartItem;
-use \bolt_dev\bolt\Models\Shared\CartShipment;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new GuestPaymentsInitializeRequest();
+    $request = new Operations\GuestPaymentsInitializeRequest();
     $request->xPublishableKey = 'string';
-    $request->guestPaymentMethodInitializeRequest = new GuestPaymentMethodInitializeRequest();
-    $request->guestPaymentMethodInitializeRequest->cart = new Cart();
-    $request->guestPaymentMethodInitializeRequest->cart->amounts = new Amounts();
+    $request->guestPaymentMethodInitializeRequest = new Shared\GuestPaymentMethodInitializeRequest();
+    $request->guestPaymentMethodInitializeRequest->cart = new Shared\Cart();
+    $request->guestPaymentMethodInitializeRequest->cart->amounts = new Shared\Amounts();
     $request->guestPaymentMethodInitializeRequest->cart->amounts->currency = 'USD';
     $request->guestPaymentMethodInitializeRequest->cart->amounts->tax = 900;
     $request->guestPaymentMethodInitializeRequest->cart->amounts->total = 900;
     $request->guestPaymentMethodInitializeRequest->cart->discounts = [
-        new CartDiscount(),
+        new Shared\CartDiscount(),
     ];
     $request->guestPaymentMethodInitializeRequest->cart->displayId = '215614191';
     $request->guestPaymentMethodInitializeRequest->cart->items = [
-        new CartItem(),
+        new Shared\CartItem(),
     ];
     $request->guestPaymentMethodInitializeRequest->cart->orderDescription = 'Order #1234567890';
     $request->guestPaymentMethodInitializeRequest->cart->orderReference = 'order_100';
     $request->guestPaymentMethodInitializeRequest->cart->shipments = [
-        new CartShipment(),
+        new Shared\CartShipment(),
     ];
     $request->guestPaymentMethodInitializeRequest->paymentMethod = 'string';
 
@@ -102,47 +96,38 @@ Bolt when it is updated or finalized for logged in shoppers.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\PaymentsInitializeRequest;
-use \bolt_dev\bolt\Models\Shared\PaymentMethodInitializeRequest;
-use \bolt_dev\bolt\Models\Shared\Cart;
-use \bolt_dev\bolt\Models\Shared\Amounts;
-use \bolt_dev\bolt\Models\Shared\CartDiscount;
-use \bolt_dev\bolt\Models\Shared\CartItem;
-use \bolt_dev\bolt\Models\Shared\CartShipment;
-use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurity;
-use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption1;
-use \bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurityOption2;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->build();
 
 try {
-    $request = new PaymentsInitializeRequest();
+    $request = new Operations\PaymentsInitializeRequest();
     $request->xPublishableKey = 'string';
-    $request->paymentMethodInitializeRequest = new PaymentMethodInitializeRequest();
-    $request->paymentMethodInitializeRequest->cart = new Cart();
-    $request->paymentMethodInitializeRequest->cart->amounts = new Amounts();
+    $request->paymentMethodInitializeRequest = new Shared\PaymentMethodInitializeRequest();
+    $request->paymentMethodInitializeRequest->cart = new Shared\Cart();
+    $request->paymentMethodInitializeRequest->cart->amounts = new Shared\Amounts();
     $request->paymentMethodInitializeRequest->cart->amounts->currency = 'USD';
     $request->paymentMethodInitializeRequest->cart->amounts->tax = 900;
     $request->paymentMethodInitializeRequest->cart->amounts->total = 900;
     $request->paymentMethodInitializeRequest->cart->discounts = [
-        new CartDiscount(),
+        new Shared\CartDiscount(),
     ];
     $request->paymentMethodInitializeRequest->cart->displayId = '215614191';
     $request->paymentMethodInitializeRequest->cart->items = [
-        new CartItem(),
+        new Shared\CartItem(),
     ];
     $request->paymentMethodInitializeRequest->cart->orderDescription = 'Order #1234567890';
     $request->paymentMethodInitializeRequest->cart->orderReference = 'order_100';
     $request->paymentMethodInitializeRequest->cart->shipments = [
-        new CartShipment(),
+        new Shared\CartShipment(),
     ];
     $request->paymentMethodInitializeRequest->paymentMethod = 'string';
 
-    $requestSecurity = new PaymentsInitializeSecurity();
-    $requestSecurity->option1 = new PaymentsInitializeSecurityOption1();
+    $requestSecurity = new Operations\PaymentsInitializeSecurity();
+    $requestSecurity->option1 = new Operations\PaymentsInitializeSecurityOption1();
     $requestSecurity->option1->apiKey = '';
     $requestSecurity->option1->oauth = '';
 

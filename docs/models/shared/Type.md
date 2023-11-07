@@ -1,4 +1,4 @@
-# PaymentMethodInitializeResponseActionType
+# Type
 
 
 ## Values

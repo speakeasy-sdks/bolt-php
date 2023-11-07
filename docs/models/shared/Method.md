@@ -1,4 +1,4 @@
-# PaymentMethodInitializeResponseActionMethod
+# Method
 
 
 ## Values

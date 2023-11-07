@@ -14,10 +14,10 @@ class Identifiers
     /**
      * $merchantDivisions
      * 
-     * @var array<\bolt_dev\bolt\Models\Shared\IdentifiersMerchantDivisions> $merchantDivisions
+     * @var array<\bolt_dev\bolt\Models\Shared\MerchantDivisions> $merchantDivisions
      */
 	#[\JMS\Serializer\Annotation\SerializedName('merchant_divisions')]
-    #[\JMS\Serializer\Annotation\Type('array<bolt_dev\bolt\Models\Shared\IdentifiersMerchantDivisions>')]
+    #[\JMS\Serializer\Annotation\Type('array<bolt_dev\bolt\Models\Shared\MerchantDivisions>')]
     public array $merchantDivisions;
     
 	#[\JMS\Serializer\Annotation\SerializedName('merchant_id')]

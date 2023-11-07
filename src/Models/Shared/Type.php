@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-enum PaymentMethodInitializeResponseActionMethod: string
+enum Type: string
 {
-    case Get = 'GET';
-    case Post = 'POST';
+    case Redirect = 'redirect';
+    case Finalize = 'finalize';
 }

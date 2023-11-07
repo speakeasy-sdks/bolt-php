@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-enum ShipmentTrackingUpdateTrackingDetailsStatus: string
+enum ShipmentTrackingUpdateSchemasStatus: string
 {
     case Unknown = 'unknown';
     case PreTransit = 'pre_transit';

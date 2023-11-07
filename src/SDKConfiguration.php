@@ -26,9 +26,9 @@ class SDKConfiguration
 	];
 	public string $language = 'php';
 	public string $openapiDocVersion = '3.0.1';
-	public string $sdkVersion = '0.8.0';
-	public string $genVersion = '2.169.0';
-	public string $userAgent = 'speakeasy-sdk/php 0.8.0 2.169.0 3.0.1 bolt-dev/bolt-embed';
+	public string $sdkVersion = '0.9.0';
+	public string $genVersion = '2.181.1';
+	public string $userAgent = 'speakeasy-sdk/php 0.9.0 2.181.1 3.0.1 bolt-dev/bolt-embed';
 	
 
 	public function getServerUrl(): string

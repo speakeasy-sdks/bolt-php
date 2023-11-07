@@ -44,20 +44,16 @@ composer update
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use bolt_dev\bolt\BoltEmbed;
-use bolt_dev\bolt\Models\Shared\Security;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
-use bolt_dev\bolt\Models\Shared\AddressListing;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption1;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption2;
+use bolt_dev\bolt;
+use bolt_dev\bolt\Models\Shared;
+use bolt_dev\bolt\Models\Operations;
 
-$sdk = BoltEmbed::builder()->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new AccountAddressCreateRequest();
+    $request = new Operations\AccountAddressCreateRequest();
     $request->xPublishableKey = 'string';
-    $request->addressListing = new AddressListing();
+    $request->addressListing = new Shared\AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
     $request->addressListing->email = 'alice@example.com';
@@ -72,8 +68,8 @@ try {
     $request->addressListing->streetAddress1 = '535 Mission St, Ste 1401';
     $request->addressListing->streetAddress2 = 'c/o Shipping Department';
 
-    $requestSecurity = new AccountAddressCreateSecurity();
-    $requestSecurity->option1 = new AccountAddressCreateSecurityOption1();
+    $requestSecurity = new Operations\AccountAddressCreateSecurity();
+    $requestSecurity->option1 = new Operations\AccountAddressCreateSecurityOption1();
     $requestSecurity->option1->apiKey = '';
     $requestSecurity->option1->oauth = '';
 
@@ -93,7 +89,7 @@ try {
 ## Available Resources and Operations
 
 
-### [account](docs/sdks/account/README.md)
+### [Account](docs/sdks/account/README.md)
 
 * [addAddress](docs/sdks/account/README.md#addaddress) - Add an address
 * [addPaymentMethod](docs/sdks/account/README.md#addpaymentmethod) - Add a payment method to a shopper's Bolt account Wallet.
@@ -102,24 +98,24 @@ try {
 * [exists](docs/sdks/account/README.md#exists) - Determine the existence of a Bolt account
 * [get](docs/sdks/account/README.md#get) - Retrieve account details
 
-### [configuration](docs/sdks/configuration/README.md)
+### [Payments](docs/sdks/payments/README.md)
+
+* [initializeGuestPayment](docs/sdks/payments/README.md#initializeguestpayment) - Initialize a Bolt payment for guest shoppers
+* [initializeLoggedInPayment](docs/sdks/payments/README.md#initializeloggedinpayment) - Initialize a Bolt payment for logged in shoppers
+
+### [Configuration](docs/sdks/configuration/README.md)
 
 * [getmerchantCallback](docs/sdks/configuration/README.md#getmerchantcallback) - Retrieve callback URLs for the merchant
 * [getmerchantIdenitfier](docs/sdks/configuration/README.md#getmerchantidenitfier) - Retrieve identifiers for the merchant
 * [updatemerchantCallback](docs/sdks/configuration/README.md#updatemerchantcallback) - Update callback URLs for the merchant
 
-### [payments](docs/sdks/payments/README.md)
-
-* [initializeGuestPayment](docs/sdks/payments/README.md#initializeguestpayment) - Initialize a Bolt payment for guest shoppers
-* [initializeLoggedInPayment](docs/sdks/payments/README.md#initializeloggedinpayment) - Initialize a Bolt payment for logged in shoppers
-
-### [testing](docs/sdks/testing/README.md)
+### [Testing](docs/sdks/testing/README.md)
 
 * [createAccount](docs/sdks/testing/README.md#createaccount) - Create a test account
 * [createShipmentTracking](docs/sdks/testing/README.md#createshipmenttracking) - Simulate a shipment tracking update
 * [getCreditCard](docs/sdks/testing/README.md#getcreditcard) - Retrieve a test credit card, including its token
 
-### [webhooks](docs/sdks/webhooks/README.md)
+### [Webhooks](docs/sdks/webhooks/README.md)
 
 * [create](docs/sdks/webhooks/README.md#create) - Create a webhook to subscribe to certain events
 * [delete](docs/sdks/webhooks/README.md#delete) - Delete an existing webhook

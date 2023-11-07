@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-/** The type of identifier */
-enum IdentifierIdentifierType: string
+enum PhoneState: string
 {
-    case Email = 'email';
-    case EmailSha256 = 'email_sha256';
+    case Missing = 'missing';
+    case Unverified = 'unverified';
+    case Verified = 'verified';
 }

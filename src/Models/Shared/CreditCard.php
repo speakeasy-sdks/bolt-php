@@ -41,11 +41,11 @@ class CreditCard
     /**
      * The credit card network.
      * 
-     * @var \bolt_dev\bolt\Models\Shared\CreditCardNetwork $network
+     * @var \bolt_dev\bolt\Models\Shared\Network $network
      */
 	#[\JMS\Serializer\Annotation\SerializedName('network')]
-    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\CreditCardNetwork>')]
-    public CreditCardNetwork $network;
+    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\Network>')]
+    public Network $network;
     
     /**
      * The Bolt token associated to the credit card.
@@ -61,7 +61,7 @@ class CreditCard
 		$this->bin = "";
 		$this->expiration = "";
 		$this->last4 = "";
-		$this->network = \bolt_dev\bolt\Models\Shared\CreditCardNetwork::Visa;
+		$this->network = \bolt_dev\bolt\Models\Shared\Network::Visa;
 		$this->token = "";
 	}
 }

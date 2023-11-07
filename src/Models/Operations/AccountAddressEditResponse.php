@@ -36,14 +36,6 @@ class AccountAddressEditResponse
     public ?\Psr\Http\Message\ResponseInterface $rawResponse = null;
     
     /**
-     * The address is invalid and cannot be added
-     * 
-     * @var mixed $accountAddressEdit400ApplicationJSONOneOf
-     */
-	
-    public mixed $accountAddressEdit400ApplicationJSONOneOf = null;
-    
-    /**
      * The address was successfully edited
      * 
      * @var ?\bolt_dev\bolt\Models\Shared\AddressListing $addressListing
@@ -51,12 +43,20 @@ class AccountAddressEditResponse
 	
     public ?\bolt_dev\bolt\Models\Shared\AddressListing $addressListing = null;
     
+    /**
+     * The address is invalid and cannot be added
+     * 
+     * @var mixed $oneOf
+     */
+	
+    public mixed $oneOf = null;
+    
 	public function __construct()
 	{
 		$this->contentType = "";
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->accountAddressEdit400ApplicationJSONOneOf = null;
 		$this->addressListing = null;
+		$this->oneOf = null;
 	}
 }

@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-class IdentifiersMerchantDivisions
+class MerchantDivisions
 {
 	#[\JMS\Serializer\Annotation\SerializedName('publishable_key')]
     #[\JMS\Serializer\Annotation\Type('string')]

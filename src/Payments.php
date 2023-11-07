@@ -55,8 +55,10 @@ class Payments
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -107,8 +109,10 @@ class Payments
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\PaymentsInitializeResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         

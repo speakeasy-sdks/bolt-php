@@ -38,16 +38,16 @@ class WebhooksGetAllResponse
     /**
      * All existing webhook information has been retrieved
      * 
-     * @var ?\bolt_dev\bolt\Models\Operations\WebhooksGetAll200ApplicationJSON $webhooksGetAll200ApplicationJSONObject
+     * @var ?\bolt_dev\bolt\Models\Operations\WebhooksGetAllResponseBody $object
      */
 	
-    public ?WebhooksGetAll200ApplicationJSON $webhooksGetAll200ApplicationJSONObject = null;
+    public ?WebhooksGetAllResponseBody $object = null;
     
 	public function __construct()
 	{
 		$this->contentType = "";
 		$this->statusCode = 0;
 		$this->rawResponse = null;
-		$this->webhooksGetAll200ApplicationJSONObject = null;
+		$this->object = null;
 	}
 }

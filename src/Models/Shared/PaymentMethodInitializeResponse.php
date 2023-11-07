@@ -12,9 +12,9 @@ namespace bolt_dev\bolt\Models\Shared;
 class PaymentMethodInitializeResponse
 {
 	#[\JMS\Serializer\Annotation\SerializedName('action')]
-    #[\JMS\Serializer\Annotation\Type('bolt_dev\bolt\Models\Shared\PaymentMethodInitializeResponseAction')]
+    #[\JMS\Serializer\Annotation\Type('bolt_dev\bolt\Models\Shared\Action')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?PaymentMethodInitializeResponseAction $action = null;
+    public ?Action $action = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('id')]
     #[\JMS\Serializer\Annotation\Type('string')]
@@ -22,9 +22,9 @@ class PaymentMethodInitializeResponse
     public ?string $id = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\PaymentMethodInitializeResponseStatus>')]
+    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\Status>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?PaymentMethodInitializeResponseStatus $status = null;
+    public ?Status $status = null;
     
 	public function __construct()
 	{

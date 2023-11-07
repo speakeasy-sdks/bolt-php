@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-enum PaymentMethodInitializeResponseStatus: string
+enum Status: string
 {
     case AwaitingUserConfirmation = 'awaiting_user_confirmation';
     case PaymentReady = 'payment_ready';

@@ -1,5 +1,5 @@
 # Testing
-(*testing*)
+
 
 ## Overview
 
@@ -26,26 +26,23 @@ Create a Bolt shopper account for testing purposes.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput;
-use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataEmailState;
-use \bolt_dev\bolt\Models\Shared\AccountTestCreationDataPhoneState;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new AccountTestCreationDataInput();
+    $request = new Shared\AccountTestCreationData();
     $request->deactivateAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2017-07-21T17:32:28Z');
-    $request->emailState = AccountTestCreationDataEmailState::Unverified;
+    $request->emailState = Shared\EmailState::Unverified;
     $request->hasAddress = true;
     $request->isMigrated = true;
-    $request->phoneState = AccountTestCreationDataPhoneState::Verified;
+    $request->phoneState = Shared\PhoneState::Verified;
 
     $response = $sdk->testing->createAccount($request);
 
@@ -59,9 +56,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                       | [\bolt_dev\bolt\Models\Shared\AccountTestCreationDataInput](../../models/shared/AccountTestCreationDataInput.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `$request`                                                                                             | [\bolt_dev\bolt\Models\Shared\AccountTestCreationData](../../models/shared/AccountTestCreationData.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
@@ -84,26 +81,22 @@ information to shipments associated with orders.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate;
-use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateStatus;
-use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetails;
-use \bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetailsStatus;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new ShipmentTrackingUpdate();
+    $request = new Shared\ShipmentTrackingUpdate();
     $request->deliveryDate = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2014-08-23:T06:00:00Z');
-    $request->status = ShipmentTrackingUpdateStatus::InTransit;
+    $request->status = Shared\ShipmentTrackingUpdateStatus::InTransit;
     $request->trackingDetails = [
-        new ShipmentTrackingUpdateTrackingDetails(),
+        new Shared\TrackingDetails(),
     ];
     $request->trackingNumber = 'MockBolt-143292';
 
@@ -143,13 +136,13 @@ generated against the `4111 1111 1111 1004` test card.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 

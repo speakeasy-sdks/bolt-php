@@ -10,7 +10,7 @@ namespace bolt_dev\bolt\Models\Shared;
 
 
 /** The credit card network. */
-enum CreditCardNetwork: string
+enum Network: string
 {
     case Visa = 'visa';
     case Mastercard = 'mastercard';

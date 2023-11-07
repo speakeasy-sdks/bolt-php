@@ -1,4 +1,4 @@
-# IdentifierIdentifierType
+# IdentifierType
 
 The type of identifier
 

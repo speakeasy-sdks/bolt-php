@@ -14,10 +14,10 @@ class Identifier
     /**
      * The type of identifier
      * 
-     * @var \bolt_dev\bolt\Models\Shared\IdentifierIdentifierType $identifierType
+     * @var \bolt_dev\bolt\Models\Shared\IdentifierType $identifierType
      */
 	#[SpeakeasyMetadata('queryParam:name=identifier_type')]
-    public IdentifierIdentifierType $identifierType;
+    public IdentifierType $identifierType;
     
     /**
      * The value of the identifier. The value must be valid for the specified `identifier_type`
@@ -29,7 +29,7 @@ class Identifier
     
 	public function __construct()
 	{
-		$this->identifierType = \bolt_dev\bolt\Models\Shared\IdentifierIdentifierType::Email;
+		$this->identifierType = \bolt_dev\bolt\Models\Shared\IdentifierType::Email;
 		$this->identifierValue = "";
 	}
 }

@@ -56,8 +56,10 @@ class Account
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\AccountAddressCreateResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -70,7 +72,7 @@ class Account
         else if ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->accountAddressCreate400ApplicationJSONOneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
+                $response->oneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
             }
         }
 
@@ -116,8 +118,10 @@ class Account
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -163,8 +167,10 @@ class Account
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\AccountAddressDeleteResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -218,8 +224,10 @@ class Account
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\AccountAddressEditResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -232,7 +240,7 @@ class Account
         else if ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->accountAddressEdit400ApplicationJSONOneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
+                $response->oneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
             }
         }
 
@@ -267,8 +275,10 @@ class Account
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\AccountExistsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -314,8 +324,10 @@ class Account
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\AccountGetResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         

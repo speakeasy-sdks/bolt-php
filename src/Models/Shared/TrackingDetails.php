@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-class ShipmentTrackingUpdateTrackingDetails
+class TrackingDetails
 {
     /**
      * The country associated this this set of tracking details, if any.
@@ -72,9 +72,9 @@ class ShipmentTrackingUpdateTrackingDetails
     public ?string $region = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('status')]
-    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetailsStatus>')]
+    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateSchemasStatus>')]
     #[\JMS\Serializer\Annotation\SkipWhenEmpty]
-    public ?ShipmentTrackingUpdateTrackingDetailsStatus $status = null;
+    public ?ShipmentTrackingUpdateSchemasStatus $status = null;
     
 	public function __construct()
 	{

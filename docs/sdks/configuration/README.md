@@ -1,5 +1,5 @@
 # Configuration
-(*configuration*)
+
 
 ## Overview
 
@@ -26,19 +26,19 @@ Return callback URLs configured on the merchant such as OAuth URLs.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new MerchantCallbacksGetRequest();
+    $request = new Operations\MerchantCallbacksGetRequest();
     $request->xPublishableKey = 'string';
 
     $response = $sdk->configuration->getmerchantCallback($request);
@@ -75,13 +75,13 @@ Return several identifiers for the merchant, such as public IDs, publishable key
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
@@ -115,22 +115,21 @@ Update and configure callback URLs on the merchant such as OAuth URLs.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest;
-use \bolt_dev\bolt\Models\Shared\CallbackUrls;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new MerchantCallbacksUpdateRequest();
+    $request = new Operations\MerchantCallbacksUpdateRequest();
     $request->xPublishableKey = 'string';
-    $request->callbackUrls = new CallbackUrls();
+    $request->callbackUrls = new Shared\CallbackUrls();
     $request->callbackUrls->accountPage = 'https://www.example.com/account';
     $request->callbackUrls->baseDomain = 'https://www.example.com/';
     $request->callbackUrls->confirmationRedirect = 'https://www.example.com/bolt/redirect';

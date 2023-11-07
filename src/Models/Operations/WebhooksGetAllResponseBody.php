@@ -10,12 +10,12 @@ namespace bolt_dev\bolt\Models\Operations;
 
 
 /**
- * WebhooksGetAll200ApplicationJSON - All existing webhook information has been retrieved
+ * WebhooksGetAllResponseBody - All existing webhook information has been retrieved
  * 
  * @package bolt_dev\bolt\Models\Operations
  * @access public
  */
-class WebhooksGetAll200ApplicationJSON
+class WebhooksGetAllResponseBody
 {
     /**
      * $webhooks

@@ -49,8 +49,10 @@ class Webhooks
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\WebhooksCreateResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -87,8 +89,10 @@ class Webhooks
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -127,8 +131,10 @@ class Webhooks
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\WebhooksGetResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -175,15 +181,17 @@ class Webhooks
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 200) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->webhooksGetAll200ApplicationJSONObject = $serializer->deserialize((string)$httpResponse->getBody(), 'bolt_dev\bolt\Models\Operations\WebhooksGetAll200ApplicationJSON', 'json');
+                $response->object = $serializer->deserialize((string)$httpResponse->getBody(), 'bolt_dev\bolt\Models\Operations\WebhooksGetAllResponseBody', 'json');
             }
         }
 

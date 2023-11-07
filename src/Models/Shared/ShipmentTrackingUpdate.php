@@ -33,10 +33,10 @@ class ShipmentTrackingUpdate
     /**
      * A list of tracking updates that contain the shipment's status, location, and any unique messages.
      * 
-     * @var array<\bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetails> $trackingDetails
+     * @var array<\bolt_dev\bolt\Models\Shared\TrackingDetails> $trackingDetails
      */
 	#[\JMS\Serializer\Annotation\SerializedName('tracking_details')]
-    #[\JMS\Serializer\Annotation\Type('array<bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdateTrackingDetails>')]
+    #[\JMS\Serializer\Annotation\Type('array<bolt_dev\bolt\Models\Shared\TrackingDetails>')]
     public array $trackingDetails;
     
     /**

@@ -9,8 +9,9 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-enum PaymentMethodInitializeResponseActionType: string
+/** The type of identifier */
+enum IdentifierType: string
 {
-    case Redirect = 'redirect';
-    case Finalize = 'finalize';
+    case Email = 'email';
+    case EmailSha256 = 'email_sha256';
 }

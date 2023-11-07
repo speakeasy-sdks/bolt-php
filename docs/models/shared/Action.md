@@ -1,0 +1,10 @@
+# Action
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           | Example                                                               |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `method`                                                              | [?\bolt_dev\bolt\Models\Shared\Method](../../models/shared/Method.md) | :heavy_minus_sign:                                                    | N/A                                                                   | GET                                                                   |
+| `type`                                                                | [?\bolt_dev\bolt\Models\Shared\Type](../../models/shared/Type.md)     | :heavy_minus_sign:                                                    | N/A                                                                   | redirect                                                              |
+| `url`                                                                 | *?string*                                                             | :heavy_minus_sign:                                                    | N/A                                                                   | www.example.com/payments/finalize                                     |

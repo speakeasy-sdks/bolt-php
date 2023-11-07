@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-enum AccountTestCreationDataEmailState: string
+enum EmailState: string
 {
     case Missing = 'missing';
     case Unverified = 'unverified';

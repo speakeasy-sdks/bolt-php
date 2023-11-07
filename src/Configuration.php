@@ -49,8 +49,10 @@ class Configuration
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -85,8 +87,10 @@ class Configuration
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -133,8 +137,10 @@ class Configuration
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
+        $statusCode = $httpResponse->getStatusCode();
+
         $response = new \bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
+        $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
         
@@ -147,7 +153,7 @@ class Configuration
         else if ($httpResponse->getStatusCode() === 400) {
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
-                $response->merchantCallbacksUpdate400ApplicationJSONOneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
+                $response->oneOf = $serializer->deserialize((string)$httpResponse->getBody(), 'mixed', 'json');
             }
         }
 

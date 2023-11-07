@@ -1,4 +1,4 @@
-# PaymentMethodInitializeResponseStatus
+# Status
 
 
 ## Values

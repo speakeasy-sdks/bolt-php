@@ -9,9 +9,8 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-enum AccountTestCreationDataPhoneState: string
+enum Method: string
 {
-    case Missing = 'missing';
-    case Unverified = 'unverified';
-    case Verified = 'verified';
+    case Get = 'GET';
+    case Post = 'POST';
 }

@@ -2,27 +2,30 @@ configVersion: 1.0.0
 management:
   docChecksum: aa6fc471002a7f00fe7aea1ea2831a18
   docVersion: 3.0.1
-  speakeasyVersion: 1.104.0
-  generationVersion: 2.169.0
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
-  repoURL: https://github.com/speakeasy-sdks/bolt-php.git
+  comments: {}
   sdkClassName: bolt-embed
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/speakeasy-sdks/bolt-php.git
 features:
   php:
-    core: 2.89.0
+    core: 3.1.0
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
     inputOutputModels: 2.81.1
     methodSecurity: 2.82.0
     nameOverrides: 2.81.1
 php:
-  version: 0.8.0
+  version: 0.9.0
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Operations
+      shared: Models/Shared
+      webhooks: Models/Webhooks
   installationURL: https://github.com/speakeasy-sdks/bolt-php
   maxMethodParams: 0
   namespace: bolt_dev\bolt

@@ -32,16 +32,6 @@ class BoltEmbed
 	public Account $account;
 	
     /**
-     * Merchant configuration endpoints allow you to retrieve and configure merchant-level
-     * 
-     * configuration, such as callback URLs, identifiers, secrets, etc...
-     * 
-     * 
-     * @var Configuration $$configuration
-     */
-	public Configuration $configuration;
-	
-    /**
      * Use the Payments API to tokenize and process alternative payment methods including Paypal with Bolt. This API is for the Bolt
      * 
      * Accounts package.
@@ -50,6 +40,16 @@ class BoltEmbed
      * @var Payments $$payments
      */
 	public Payments $payments;
+	
+    /**
+     * Merchant configuration endpoints allow you to retrieve and configure merchant-level
+     * 
+     * configuration, such as callback URLs, identifiers, secrets, etc...
+     * 
+     * 
+     * @var Configuration $$configuration
+     */
+	public Configuration $configuration;
 	
     /**
      * Endpoints that allow you to generate and retrieve test data to verify certain
@@ -92,9 +92,9 @@ class BoltEmbed
 		
 		$this->account = new Account($this->sdkConfiguration);
 		
-		$this->configuration = new Configuration($this->sdkConfiguration);
-		
 		$this->payments = new Payments($this->sdkConfiguration);
+		
+		$this->configuration = new Configuration($this->sdkConfiguration);
 		
 		$this->testing = new Testing($this->sdkConfiguration);
 		

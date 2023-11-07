@@ -9,15 +9,15 @@ declare(strict_types=1);
 namespace bolt_dev\bolt\Models\Shared;
 
 
-class AccountTestCreationDataInput
+class AccountTestCreationData
 {
 	#[\JMS\Serializer\Annotation\SerializedName('deactivate_at')]
     #[\JMS\Serializer\Annotation\Type("DateTime<'Y-m-d\TH:i:s.up'>")]
     public \DateTime $deactivateAt;
     
 	#[\JMS\Serializer\Annotation\SerializedName('email_state')]
-    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\AccountTestCreationDataEmailState>')]
-    public AccountTestCreationDataEmailState $emailState;
+    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\EmailState>')]
+    public EmailState $emailState;
     
 	#[\JMS\Serializer\Annotation\SerializedName('has_address')]
     #[\JMS\Serializer\Annotation\Type('bool')]
@@ -30,15 +30,15 @@ class AccountTestCreationDataInput
     public ?bool $isMigrated = null;
     
 	#[\JMS\Serializer\Annotation\SerializedName('phone_state')]
-    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\AccountTestCreationDataPhoneState>')]
-    public AccountTestCreationDataPhoneState $phoneState;
+    #[\JMS\Serializer\Annotation\Type('enum<bolt_dev\bolt\Models\Shared\PhoneState>')]
+    public PhoneState $phoneState;
     
 	public function __construct()
 	{
 		$this->deactivateAt = new \DateTime();
-		$this->emailState = \bolt_dev\bolt\Models\Shared\AccountTestCreationDataEmailState::Missing;
+		$this->emailState = \bolt_dev\bolt\Models\Shared\EmailState::Missing;
 		$this->hasAddress = null;
 		$this->isMigrated = null;
-		$this->phoneState = \bolt_dev\bolt\Models\Shared\AccountTestCreationDataPhoneState::Missing;
+		$this->phoneState = \bolt_dev\bolt\Models\Shared\PhoneState::Missing;
 	}
 }

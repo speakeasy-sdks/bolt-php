@@ -7,20 +7,16 @@
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use bolt_dev\bolt\BoltEmbed;
-use bolt_dev\bolt\Models\Shared\Security;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest;
-use bolt_dev\bolt\Models\Shared\AddressListing;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption1;
-use bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurityOption2;
+use bolt_dev\bolt;
+use bolt_dev\bolt\Models\Shared;
+use bolt_dev\bolt\Models\Operations;
 
-$sdk = BoltEmbed::builder()->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new AccountAddressCreateRequest();
+    $request = new Operations\AccountAddressCreateRequest();
     $request->xPublishableKey = 'string';
-    $request->addressListing = new AddressListing();
+    $request->addressListing = new Shared\AddressListing();
     $request->addressListing->company = 'ACME Corporation';
     $request->addressListing->countryCode = 'US';
     $request->addressListing->email = 'alice@example.com';
@@ -35,8 +31,8 @@ try {
     $request->addressListing->streetAddress1 = '535 Mission St, Ste 1401';
     $request->addressListing->streetAddress2 = 'c/o Shipping Department';
 
-    $requestSecurity = new AccountAddressCreateSecurity();
-    $requestSecurity->option1 = new AccountAddressCreateSecurityOption1();
+    $requestSecurity = new Operations\AccountAddressCreateSecurity();
+    $requestSecurity->option1 = new Operations\AccountAddressCreateSecurityOption1();
     $requestSecurity->option1->apiKey = '';
     $requestSecurity->option1->oauth = '';
 

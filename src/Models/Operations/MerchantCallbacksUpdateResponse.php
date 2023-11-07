@@ -46,10 +46,10 @@ class MerchantCallbacksUpdateResponse
     /**
      * The URL is invalid and cannot be set
      * 
-     * @var mixed $merchantCallbacksUpdate400ApplicationJSONOneOf
+     * @var mixed $oneOf
      */
 	
-    public mixed $merchantCallbacksUpdate400ApplicationJSONOneOf = null;
+    public mixed $oneOf = null;
     
 	public function __construct()
 	{
@@ -57,6 +57,6 @@ class MerchantCallbacksUpdateResponse
 		$this->statusCode = 0;
 		$this->rawResponse = null;
 		$this->callbackUrls = null;
-		$this->merchantCallbacksUpdate400ApplicationJSONOneOf = null;
+		$this->oneOf = null;
 	}
 }

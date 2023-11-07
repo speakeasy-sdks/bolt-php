@@ -1,5 +1,5 @@
 # Webhooks
-(*webhooks*)
+
 
 ## Overview
 
@@ -27,19 +27,18 @@ Create a new webhook to receive notifications from Bolt about various events, su
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Shared\WebhookInput;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new WebhookInput();
+    $request = new Shared\WebhookInput();
     $request->event = 'string';
     $request->url = 'https://www.example.com/webhook';
 
@@ -77,19 +76,19 @@ Delete an existing webhook. You will no longer receive notifications from Bolt a
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new WebhooksDeleteRequest();
+    $request = new Operations\WebhooksDeleteRequest();
     $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';
 
     $response = $sdk->webhooks->delete($request);
@@ -126,19 +125,19 @@ Retrieve information for an existing webhook.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\WebhooksGetRequest;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new WebhooksGetRequest();
+    $request = new Operations\WebhooksGetRequest();
     $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';
 
     $response = $sdk->webhooks->get($request);
@@ -175,24 +174,24 @@ Retrieve information about all existing webhooks.
 declare(strict_types=1);
 require_once 'vendor/autoload.php';
 
-use \bolt_dev\bolt\BoltEmbed;
-use \bolt_dev\bolt\Models\Shared\Security;
-use \bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest;
+use \bolt_dev\bolt;
+use \bolt_dev\bolt\Models\Shared;
+use \bolt_dev\bolt\Models\Operations;
 
-$security = new Security();
+$security = new Shared\Security();
 $security->apiKey = '';
 
-$sdk = BoltEmbed::builder()
+$sdk = bolt\BoltEmbed::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $request = new WebhooksGetAllRequest();
+    $request = new Operations\WebhooksGetAllRequest();
     $request->xPublishableKey = 'string';
 
     $response = $sdk->webhooks->getAll($request);
 
-    if ($response->webhooksGetAll200ApplicationJSONObject !== null) {
+    if ($response->object !== null) {
         // handle response
     }
 } catch (Exception $e) {
