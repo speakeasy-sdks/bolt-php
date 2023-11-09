@@ -1,0 +1,10 @@
+# PaymentMethodInitializeResponse
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           | Example                                                               |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `action`                                                              | [?\bolt_dev\bolt\Models\Shared\Action](../../Models/Shared/Action.md) | :heavy_minus_sign:                                                    | N/A                                                                   |                                                                       |
+| `id`                                                                  | *?string*                                                             | :heavy_minus_sign:                                                    | N/A                                                                   | id                                                                    |
+| `status`                                                              | [?\bolt_dev\bolt\Models\Shared\Status](../../Models/Shared/Status.md) | :heavy_minus_sign:                                                    | N/A                                                                   | awaiting_user_confirmation                                            |

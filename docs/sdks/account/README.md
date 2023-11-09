@@ -72,13 +72,13 @@ try {
 
 | Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest](../../models/operations/AccountAddressCreateRequest.md)   | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity](../../models/operations/AccountAddressCreateSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
+| `$request`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressCreateRequest](../../Models/Operations/AccountAddressCreateRequest.md)   | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressCreateSecurity](../../Models/Operations/AccountAddressCreateSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\AccountAddressCreateResponse](../../models/operations/AccountAddressCreateResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\AccountAddressCreateResponse](../../Models/Operations/AccountAddressCreateResponse.md)**
 
 
 ## addPaymentMethod
@@ -128,13 +128,13 @@ try {
 
 | Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodRequest](../../models/operations/AccountAddPaymentMethodRequest.md)   | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `security`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurity](../../models/operations/AccountAddPaymentMethodSecurity.md) | :heavy_check_mark:                                                                                                             | The security requirements to use for the request.                                                                              |
+| `$request`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodRequest](../../Models/Operations/AccountAddPaymentMethodRequest.md)   | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
+| `security`                                                                                                                     | [\bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodSecurity](../../Models/Operations/AccountAddPaymentMethodSecurity.md) | :heavy_check_mark:                                                                                                             | The security requirements to use for the request.                                                                              |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodResponse](../../models/operations/AccountAddPaymentMethodResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\AccountAddPaymentMethodResponse](../../Models/Operations/AccountAddPaymentMethodResponse.md)**
 
 
 ## deleteAddress
@@ -182,13 +182,13 @@ try {
 
 | Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressDeleteRequest](../../models/operations/AccountAddressDeleteRequest.md)   | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurity](../../models/operations/AccountAddressDeleteSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
+| `$request`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressDeleteRequest](../../Models/Operations/AccountAddressDeleteRequest.md)   | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `security`                                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountAddressDeleteSecurity](../../Models/Operations/AccountAddressDeleteSecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\AccountAddressDeleteResponse](../../models/operations/AccountAddressDeleteResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\AccountAddressDeleteResponse](../../Models/Operations/AccountAddressDeleteResponse.md)**
 
 
 ## editAddress
@@ -251,13 +251,13 @@ try {
 
 | Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountAddressEditRequest](../../models/operations/AccountAddressEditRequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountAddressEditSecurity](../../models/operations/AccountAddressEditSecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
+| `$request`                                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountAddressEditRequest](../../Models/Operations/AccountAddressEditRequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `security`                                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountAddressEditSecurity](../../Models/Operations/AccountAddressEditSecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\AccountAddressEditResponse](../../models/operations/AccountAddressEditResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\AccountAddressEditResponse](../../Models/Operations/AccountAddressEditResponse.md)**
 
 
 ## exists
@@ -304,12 +304,12 @@ try {
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountExistsRequest](../../models/operations/AccountExistsRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `$request`                                                                                               | [\bolt_dev\bolt\Models\Operations\AccountExistsRequest](../../Models/Operations/AccountExistsRequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\AccountExistsResponse](../../models/operations/AccountExistsResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\AccountExistsResponse](../../Models/Operations/AccountExistsResponse.md)**
 
 
 ## get
@@ -354,11 +354,11 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountGetRequest](../../models/operations/AccountGetRequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountGetSecurity](../../models/operations/AccountGetSecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `$request`                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountGetRequest](../../Models/Operations/AccountGetRequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [\bolt_dev\bolt\Models\Operations\AccountGetSecurity](../../Models/Operations/AccountGetSecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\AccountGetResponse](../../models/operations/AccountGetResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\AccountGetResponse](../../Models/Operations/AccountGetResponse.md)**
 

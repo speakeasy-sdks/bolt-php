@@ -58,12 +58,12 @@ try {
 
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `$request`                                                                                             | [\bolt_dev\bolt\Models\Shared\AccountTestCreationData](../../models/shared/AccountTestCreationData.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `$request`                                                                                             | [\bolt_dev\bolt\Models\Shared\AccountTestCreationData](../../Models/Shared/AccountTestCreationData.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse](../../models/operations/TestingAccountCreateResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\TestingAccountCreateResponse](../../Models/Operations/TestingAccountCreateResponse.md)**
 
 
 ## createShipmentTracking
@@ -114,12 +114,12 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate](../../models/shared/ShipmentTrackingUpdate.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `$request`                                                                                           | [\bolt_dev\bolt\Models\Shared\ShipmentTrackingUpdate](../../Models/Shared/ShipmentTrackingUpdate.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateResponse](../../models/operations/TestingShipmentTrackingCreateResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\TestingShipmentTrackingCreateResponse](../../Models/Operations/TestingShipmentTrackingCreateResponse.md)**
 
 
 ## getCreditCard
@@ -160,5 +160,5 @@ try {
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\TestingCreditCardGetResponse](../../models/operations/TestingCreditCardGetResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\TestingCreditCardGetResponse](../../Models/Operations/TestingCreditCardGetResponse.md)**
 

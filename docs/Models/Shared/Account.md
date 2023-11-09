@@ -1,0 +1,10 @@
+# Account
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `addresses`                                                                                 | array<[\bolt_dev\bolt\Models\Shared\AddressListing](../../Models/Shared/AddressListing.md)> | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `paymentMethods`                                                                            | array<*mixed*>                                                                              | :heavy_check_mark:                                                                          | N/A                                                                                         |
+| `profile`                                                                                   | [?\bolt_dev\bolt\Models\Shared\Profile](../../Models/Shared/Profile.md)                     | :heavy_minus_sign:                                                                          | N/A                                                                                         |

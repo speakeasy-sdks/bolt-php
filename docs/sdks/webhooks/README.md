@@ -56,12 +56,12 @@ try {
 
 | Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `$request`                                                                       | [\bolt_dev\bolt\Models\Shared\WebhookInput](../../models/shared/WebhookInput.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `$request`                                                                       | [\bolt_dev\bolt\Models\Shared\WebhookInput](../../Models/Shared/WebhookInput.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\WebhooksCreateResponse](../../models/operations/WebhooksCreateResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\WebhooksCreateResponse](../../Models/Operations/WebhooksCreateResponse.md)**
 
 
 ## delete
@@ -105,12 +105,12 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest](../../models/operations/WebhooksDeleteRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\bolt_dev\bolt\Models\Operations\WebhooksDeleteRequest](../../Models/Operations/WebhooksDeleteRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse](../../models/operations/WebhooksDeleteResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\WebhooksDeleteResponse](../../Models/Operations/WebhooksDeleteResponse.md)**
 
 
 ## get
@@ -154,12 +154,12 @@ try {
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                           | [\bolt_dev\bolt\Models\Operations\WebhooksGetRequest](../../models/operations/WebhooksGetRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `$request`                                                                                           | [\bolt_dev\bolt\Models\Operations\WebhooksGetRequest](../../Models/Operations/WebhooksGetRequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\WebhooksGetResponse](../../models/operations/WebhooksGetResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\WebhooksGetResponse](../../Models/Operations/WebhooksGetResponse.md)**
 
 
 ## getAll
@@ -203,10 +203,10 @@ try {
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                 | [\bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest](../../models/operations/WebhooksGetAllRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `$request`                                                                                                 | [\bolt_dev\bolt\Models\Operations\WebhooksGetAllRequest](../../Models/Operations/WebhooksGetAllRequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse](../../models/operations/WebhooksGetAllResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\WebhooksGetAllResponse](../../Models/Operations/WebhooksGetAllResponse.md)**
 

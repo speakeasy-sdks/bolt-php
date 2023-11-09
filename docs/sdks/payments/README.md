@@ -74,12 +74,12 @@ try {
 
 | Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest](../../models/operations/GuestPaymentsInitializeRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
+| `$request`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeRequest](../../Models/Operations/GuestPaymentsInitializeRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeResponse](../../models/operations/GuestPaymentsInitializeResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\GuestPaymentsInitializeResponse](../../Models/Operations/GuestPaymentsInitializeResponse.md)**
 
 
 ## initializeLoggedInPayment
@@ -145,11 +145,11 @@ try {
 
 | Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                           | [\bolt_dev\bolt\Models\Operations\PaymentsInitializeRequest](../../models/operations/PaymentsInitializeRequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [\bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurity](../../models/operations/PaymentsInitializeSecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
+| `$request`                                                                                                           | [\bolt_dev\bolt\Models\Operations\PaymentsInitializeRequest](../../Models/Operations/PaymentsInitializeRequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `security`                                                                                                           | [\bolt_dev\bolt\Models\Operations\PaymentsInitializeSecurity](../../Models/Operations/PaymentsInitializeSecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\PaymentsInitializeResponse](../../models/operations/PaymentsInitializeResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\PaymentsInitializeResponse](../../Models/Operations/PaymentsInitializeResponse.md)**
 

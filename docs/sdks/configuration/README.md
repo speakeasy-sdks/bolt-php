@@ -55,12 +55,12 @@ try {
 
 | Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
 | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                             | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest](../../models/operations/MerchantCallbacksGetRequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `$request`                                                                                                             | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetRequest](../../Models/Operations/MerchantCallbacksGetRequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse](../../models/operations/MerchantCallbacksGetResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\MerchantCallbacksGetResponse](../../Models/Operations/MerchantCallbacksGetResponse.md)**
 
 
 ## getmerchantIdenitfier
@@ -99,7 +99,7 @@ try {
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetResponse](../../models/operations/MerchantIdentifiersGetResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\MerchantIdentifiersGetResponse](../../Models/Operations/MerchantIdentifiersGetResponse.md)**
 
 
 ## updatemerchantCallback
@@ -164,10 +164,10 @@ try {
 
 | Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
 | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `$request`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest](../../models/operations/MerchantCallbacksUpdateRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
+| `$request`                                                                                                                   | [\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateRequest](../../Models/Operations/MerchantCallbacksUpdateRequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 
 
 ### Response
 
-**[?\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateResponse](../../models/operations/MerchantCallbacksUpdateResponse.md)**
+**[?\bolt_dev\bolt\Models\Operations\MerchantCallbacksUpdateResponse](../../Models/Operations/MerchantCallbacksUpdateResponse.md)**
 

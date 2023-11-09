@@ -1,0 +1,10 @@
+# CartShipment
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `address`                                                               | *mixed*                                                                 | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `carrier`                                                               | *?string*                                                               | :heavy_minus_sign:                                                      | The name of the carrier selected.                                       | FedEx                                                                   |
+| `cost`                                                                  | [?\bolt_dev\bolt\Models\Shared\Amounts](../../Models/Shared/Amounts.md) | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
