@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: aa6fc471002a7f00fe7aea1ea2831a18
   docVersion: 3.0.1
-  speakeasyVersion: 1.120.3
-  generationVersion: 2.192.1
+  speakeasyVersion: 1.121.1
+  generationVersion: 2.194.1
 generation:
   comments: {}
   sdkClassName: bolt-embed
@@ -14,12 +14,12 @@ features:
   php:
     core: 3.1.2
     globalSecurity: 2.81.1
-    globalServerURLs: 2.82.0
+    globalServerURLs: 2.82.1
     inputOutputModels: 2.82.0
     methodSecurity: 2.82.0
     nameOverrides: 2.81.1
 php:
-  version: 0.10.1
+  version: 0.10.2
   imports:
     option: openapi
     paths:

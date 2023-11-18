@@ -73,6 +73,24 @@ class BoltEmbedBuilder
     
     
     /**
+     * setUsername is used to configure the username variable for url substitution
+     *
+     * @param string $username
+     * @return BoltEmbedBuilder
+     */
+    public function setUsername(string $username): BoltEmbedBuilder
+    {
+        foreach ($this->sdkConfig->serverDefaults as $idx => $serverDefaults) {
+            if (!array_key_exists('username', $serverDefaults)) {
+                continue;
+            }
+            
+            $this->sdkConfig->serverDefaults[$idx]['username'] = $username;
+        }
+
+        return $this;
+    }
+    /**
      * setEnvironment is used to configure the environment variable for url substitution
      *
      * @param ServerEnvironment $environment
@@ -87,24 +105,6 @@ class BoltEmbedBuilder
             
             $this->sdkConfig->serverDefaults[$idx]['environment'] = $environment->value;
             
-        }
-
-        return $this;
-    }
-    /**
-     * setUsername is used to configure the username variable for url substitution
-     *
-     * @param string $username
-     * @return BoltEmbedBuilder
-     */
-    public function setUsername(string $username): BoltEmbedBuilder
-    {
-        foreach ($this->sdkConfig->serverDefaults as $idx => $serverDefaults) {
-            if (!array_key_exists('username', $serverDefaults)) {
-                continue;
-            }
-            
-            $this->sdkConfig->serverDefaults[$idx]['username'] = $username;
         }
 
         return $this;
