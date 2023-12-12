@@ -12,10 +12,10 @@ use \bolt_dev\bolt\Utils\SpeakeasyMetadata;
 class Security
 {
 	#[SpeakeasyMetadata('security:scheme=true,type=apiKey,subtype=header,name=X-API-Key')]
-    public string $apiKey;
+    public ?string $apiKey = null;
     
 	public function __construct()
 	{
-		$this->apiKey = "";
+		$this->apiKey = null;
 	}
 }

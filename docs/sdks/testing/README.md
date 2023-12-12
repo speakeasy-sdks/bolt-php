@@ -30,19 +30,17 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\AccountTestCreationData();
+        $request = new Shared\AccountTestCreationData();
     $request->deactivateAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2017-07-21T17:32:28Z');
     $request->emailState = Shared\EmailState::Unverified;
     $request->hasAddress = true;
     $request->isMigrated = true;
-    $request->phoneState = Shared\PhoneState::Verified;
+    $request->phoneState = Shared\PhoneState::Verified;;
 
     $response = $sdk->testing->createAccount($request);
 
@@ -85,20 +83,18 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\ShipmentTrackingUpdate();
+        $request = new Shared\ShipmentTrackingUpdate();
     $request->deliveryDate = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2014-08-23:T06:00:00Z');
     $request->status = Shared\ShipmentTrackingUpdateStatus::InTransit;
     $request->trackingDetails = [
         new Shared\TrackingDetails(),
     ];
-    $request->trackingNumber = 'MockBolt-143292';
+    $request->trackingNumber = 'MockBolt-143292';;
 
     $response = $sdk->testing->createShipmentTracking($request);
 
@@ -140,11 +136,9 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
     $response = $sdk->testing->getCreditCard();

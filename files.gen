@@ -111,7 +111,6 @@ src/Models/Shared/WebhookInput.php
 src/Models/Shared/Security.php
 src/Models/Callbacks/WebhooksCreateWebhookEventResponse.php
 src/Models/Callbacks/WebhooksCreateWebhookEventRequestBody.php
-USAGE.md
 docs/Models/Operations/AccountAddressCreateSecurityOption1.md
 docs/Models/Operations/AccountAddressCreateSecurityOption2.md
 docs/Models/Operations/AccountAddressCreateSecurity.md
@@ -204,4 +203,5 @@ docs/sdks/payments/README.md
 docs/sdks/configuration/README.md
 docs/sdks/testing/README.md
 docs/sdks/webhooks/README.md
+USAGE.md
 .gitattributes

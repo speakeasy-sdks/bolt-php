@@ -31,16 +31,14 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Shared\WebhookInput();
+        $request = new Shared\WebhookInput();
     $request->event = 'string';
-    $request->url = 'https://www.example.com/webhook';
+    $request->url = 'https://www.example.com/webhook';;
 
     $response = $sdk->webhooks->create($request);
 
@@ -81,15 +79,13 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\WebhooksDeleteRequest();
-    $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';
+        $request = new Operations\WebhooksDeleteRequest();
+    $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';;
 
     $response = $sdk->webhooks->delete($request);
 
@@ -130,15 +126,13 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\WebhooksGetRequest();
-    $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';
+        $request = new Operations\WebhooksGetRequest();
+    $request->id = 'wh_za7VbYcSQU2zRgGQXQAm-g';;
 
     $response = $sdk->webhooks->get($request);
 
@@ -179,15 +173,13 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\WebhooksGetAllRequest();
-    $request->xPublishableKey = 'string';
+        $request = new Operations\WebhooksGetAllRequest();
+    $request->xPublishableKey = 'string';;
 
     $response = $sdk->webhooks->getAll($request);
 

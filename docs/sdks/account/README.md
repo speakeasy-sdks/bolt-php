@@ -32,11 +32,10 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
-$sdk = bolt\BoltEmbed::builder()
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new Operations\AccountAddressCreateRequest();
+        $request = new Operations\AccountAddressCreateRequest();
     $request->xPublishableKey = 'string';
     $request->addressListing = new Shared\AddressListing();
     $request->addressListing->company = 'ACME Corporation';
@@ -51,12 +50,12 @@ try {
     $request->addressListing->postalCode = '94105';
     $request->addressListing->region = 'CA';
     $request->addressListing->streetAddress1 = '535 Mission St, Ste 1401';
-    $request->addressListing->streetAddress2 = 'c/o Shipping Department';
+    $request->addressListing->streetAddress2 = 'c/o Shipping Department';;
 
     $requestSecurity = new Operations\AccountAddressCreateSecurity();
     $requestSecurity->option1 = new Operations\AccountAddressCreateSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->addAddress($request, $requestSecurity);
 
@@ -101,18 +100,17 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
-$sdk = bolt\BoltEmbed::builder()
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new Operations\AccountAddPaymentMethodRequest();
+        $request = new Operations\AccountAddPaymentMethodRequest();
     $request->requestBody = 'string';
-    $request->xPublishableKey = 'string';
+    $request->xPublishableKey = 'string';;
 
     $requestSecurity = new Operations\AccountAddPaymentMethodSecurity();
     $requestSecurity->option1 = new Operations\AccountAddPaymentMethodSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->addPaymentMethod($request, $requestSecurity);
 
@@ -155,18 +153,17 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
-$sdk = bolt\BoltEmbed::builder()
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new Operations\AccountAddressDeleteRequest();
+        $request = new Operations\AccountAddressDeleteRequest();
     $request->xPublishableKey = 'string';
-    $request->id = 'D4g3h5tBuVYK9';
+    $request->id = 'D4g3h5tBuVYK9';;
 
     $requestSecurity = new Operations\AccountAddressDeleteSecurity();
     $requestSecurity->option1 = new Operations\AccountAddressDeleteSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->deleteAddress($request, $requestSecurity);
 
@@ -210,11 +207,10 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
-$sdk = bolt\BoltEmbed::builder()
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new Operations\AccountAddressEditRequest();
+        $request = new Operations\AccountAddressEditRequest();
     $request->xPublishableKey = 'string';
     $request->addressListing = new Shared\AddressListing();
     $request->addressListing->company = 'ACME Corporation';
@@ -230,12 +226,12 @@ try {
     $request->addressListing->region = 'CA';
     $request->addressListing->streetAddress1 = '535 Mission St, Ste 1401';
     $request->addressListing->streetAddress2 = 'c/o Shipping Department';
-    $request->id = 'D4g3h5tBuVYK9';
+    $request->id = 'D4g3h5tBuVYK9';;
 
     $requestSecurity = new Operations\AccountAddressEditSecurity();
     $requestSecurity->option1 = new Operations\AccountAddressEditSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->editAddress($request, $requestSecurity);
 
@@ -277,18 +273,16 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\AccountExistsRequest();
+        $request = new Operations\AccountExistsRequest();
     $request->xPublishableKey = 'string';
     $request->identifier = new Shared\Identifier();
     $request->identifier->identifierType = Shared\IdentifierType::Email;
-    $request->identifier->identifierValue = 'alice@example.com';
+    $request->identifier->identifierValue = 'alice@example.com';;
 
     $response = $sdk->account->exists($request);
 
@@ -328,17 +322,16 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
-$sdk = bolt\BoltEmbed::builder()
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new Operations\AccountGetRequest();
-    $request->xPublishableKey = 'string';
+        $request = new Operations\AccountGetRequest();
+    $request->xPublishableKey = 'string';;
 
     $requestSecurity = new Operations\AccountGetSecurity();
     $requestSecurity->option1 = new Operations\AccountGetSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->get($request, $requestSecurity);
 

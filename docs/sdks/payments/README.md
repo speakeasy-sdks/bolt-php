@@ -31,14 +31,12 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\GuestPaymentsInitializeRequest();
+        $request = new Operations\GuestPaymentsInitializeRequest();
     $request->xPublishableKey = 'string';
     $request->guestPaymentMethodInitializeRequest = new Shared\GuestPaymentMethodInitializeRequest();
     $request->guestPaymentMethodInitializeRequest->cart = new Shared\Cart();
@@ -58,7 +56,7 @@ try {
     $request->guestPaymentMethodInitializeRequest->cart->shipments = [
         new Shared\CartShipment(),
     ];
-    $request->guestPaymentMethodInitializeRequest->paymentMethod = 'string';
+    $request->guestPaymentMethodInitializeRequest->paymentMethod = 'string';;
 
     $response = $sdk->payments->initializeGuestPayment($request);
 
@@ -100,11 +98,10 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
-$sdk = bolt\BoltEmbed::builder()
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->build();
 
 try {
-    $request = new Operations\PaymentsInitializeRequest();
+        $request = new Operations\PaymentsInitializeRequest();
     $request->xPublishableKey = 'string';
     $request->paymentMethodInitializeRequest = new Shared\PaymentMethodInitializeRequest();
     $request->paymentMethodInitializeRequest->cart = new Shared\Cart();
@@ -124,12 +121,12 @@ try {
     $request->paymentMethodInitializeRequest->cart->shipments = [
         new Shared\CartShipment(),
     ];
-    $request->paymentMethodInitializeRequest->paymentMethod = 'string';
+    $request->paymentMethodInitializeRequest->paymentMethod = 'string';;
 
     $requestSecurity = new Operations\PaymentsInitializeSecurity();
     $requestSecurity->option1 = new Operations\PaymentsInitializeSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->payments->initializeLoggedInPayment($request, $requestSecurity);
 

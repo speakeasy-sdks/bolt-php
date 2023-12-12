@@ -31,15 +31,13 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\MerchantCallbacksGetRequest();
-    $request->xPublishableKey = 'string';
+        $request = new Operations\MerchantCallbacksGetRequest();
+    $request->xPublishableKey = 'string';;
 
     $response = $sdk->configuration->getmerchantCallback($request);
 
@@ -79,11 +77,9 @@ use \bolt_dev\bolt;
 use \bolt_dev\bolt\Models\Shared;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
     $response = $sdk->configuration->getmerchantIdenitfier();
@@ -120,14 +116,12 @@ use \bolt_dev\bolt\Models\Shared;
 use \bolt_dev\bolt\Models\Operations;
 
 $security = new Shared\Security();
-$security->apiKey = '';
+$security->apiKey = '<YOUR_API_KEY_HERE>';
 
-$sdk = bolt\BoltEmbed::builder()
-    ->setSecurity($security)
-    ->build();
+$sdk = bolt\BoltEmbed::builder()->setSecurity($security)->build();
 
 try {
-    $request = new Operations\MerchantCallbacksUpdateRequest();
+        $request = new Operations\MerchantCallbacksUpdateRequest();
     $request->xPublishableKey = 'string';
     $request->callbackUrls = new Shared\CallbackUrls();
     $request->callbackUrls->accountPage = 'https://www.example.com/account';
@@ -148,7 +142,7 @@ try {
     $request->callbackUrls->termsOfService = 'https://www.example.com/terms-of-service';
     $request->callbackUrls->universalMerchantApi = 'https://www.example.com/bolt/merchant-api';
     $request->callbackUrls->updateCart = 'https://www.example.com/bolt/cart';
-    $request->callbackUrls->validateAdditionalAccountData = 'https://www.example.com/bolt/validate-account';
+    $request->callbackUrls->validateAdditionalAccountData = 'https://www.example.com/bolt/validate-account';;
 
     $response = $sdk->configuration->updatemerchantCallback($request);
 

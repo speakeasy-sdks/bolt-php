@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```php
 <?php
 
@@ -31,8 +31,8 @@ try {
 
     $requestSecurity = new Operations\AccountAddressCreateSecurity();
     $requestSecurity->option1 = new Operations\AccountAddressCreateSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->addAddress($request, $requestSecurity);
 
@@ -44,4 +44,4 @@ try {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

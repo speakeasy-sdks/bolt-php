@@ -8,7 +8,7 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### Composer
@@ -34,10 +34,11 @@ Then run the following command:
 ```bash
 composer update
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```php
@@ -72,8 +73,8 @@ try {
 
     $requestSecurity = new Operations\AccountAddressCreateSecurity();
     $requestSecurity->option1 = new Operations\AccountAddressCreateSecurityOption1();
-    $requestSecurity->option1->apiKey = '';
-    $requestSecurity->option1->oauth = '';
+    $requestSecurity->option1->apiKey = '<YOUR_API_KEY_HERE>';
+    $requestSecurity->option1->oauth = 'Bearer <YOUR_ACCESS_TOKEN_HERE>';
 
     $response = $sdk->account->addAddress($request, $requestSecurity);
 
@@ -85,11 +86,10 @@ try {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [Account](docs/sdks/account/README.md)
 
@@ -123,13 +123,36 @@ try {
 * [delete](docs/sdks/webhooks/README.md#delete) - Delete an existing webhook
 * [get](docs/sdks/webhooks/README.md#get) - Retrieve information for a specific webhook
 * [getAll](docs/sdks/webhooks/README.md#getall) - Retrieve information about all existing webhooks
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
+<!-- Start Server Selection [server] -->
+## Server Selection
 
-<!-- End Dev Containers -->
+## Server Selection
+
+### Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.{username}.dev.bolt.me/v3` | `username` (default is `xwang`) |
+| 1 | `https://{environment}.bolt.com/v3` | `environment` (default is `api-sandbox`) |
+
+
+
+#### Variables
+
+Some of the server options above contain variables. If you want to set the values of those variables, the following optional parameters are available when initializing the SDK client instance:
+ * `username: string`
+ * `environment: ServerEnvironment`
+
+### Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+<!-- End Server Selection [server] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
