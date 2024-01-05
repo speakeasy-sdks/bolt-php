@@ -1,23 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: aa6fc471002a7f00fe7aea1ea2831a18
-  docVersion: 3.0.1
-  speakeasyVersion: 1.126.0
-  generationVersion: 2.213.3
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: bolt-embed
-  repoURL: https://github.com/speakeasy-sdks/bolt-php.git
   usageSnippets:
     optionalPropertyRendering: withExample
-features:
-  php:
-    core: 3.2.0
-    globalSecurity: 2.81.2
-    globalServerURLs: 2.82.1
-    inputOutputModels: 2.82.0
-    methodSecurity: 2.82.0
-    nameOverrides: 2.81.1
+  fixes:
+    nameResolutionDec2023: false
 php:
   version: 0.11.0
   imports:
@@ -29,9 +16,7 @@ php:
       shared: Models/Shared
       webhooks: Models/Webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/speakeasy-sdks/bolt-php
   maxMethodParams: 0
   namespace: bolt_dev\bolt
   outputModelSuffix: output
   packageName: bolt-dev/bolt-embed
-  repoSubDirectory: .
